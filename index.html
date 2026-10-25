@@ -91,6 +91,23 @@ body.intro-locked{overflow:hidden}.site-arriving .hero{animation:siteArrival .65
 @media(max-width:520px){.entry-world{width:94vw}}
 @media(prefers-reduced-motion:reduce){.entry-world{transition:none}.entry-gate.is-entering .entry-world{animation:none}}
 
+.network-hero{min-width:0;width:100%;perspective:900px}
+.hero-world{position:relative;width:min(112%,460px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ffb54708,transparent 65%);filter:drop-shadow(0 0 30px #ffb54712);transition:filter .4s}
+.hero-world canvas{width:100%;height:100%;display:block}
+.network-hero:hover .hero-world,.network-hero:focus-within .hero-world{filter:drop-shadow(0 0 35px #ffb54725)}
+.network-orbit{position:absolute;inset:7%;border:1px solid #ffb54730;border-radius:50%;transform:rotate(-25deg) scaleX(1.1) scaleY(.4);pointer-events:none}
+.network-orbit:after{content:"";position:absolute;left:15%;top:11%;width:5px;height:5px;border-radius:50%;background:#ffd28a;box-shadow:0 0 14px #ffb547}
+.network-orbit.orbit-cross{transform:rotate(48deg) scaleX(1.1) scaleY(.4);border-style:dashed;opacity:.45}
+.globe-chip{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid #ffb54733;border-radius:13px;background:#141b20eb;backdrop-filter:blur(10px);box-shadow:0 12px 30px #0004;text-decoration:none;color:#f4f1e9;font-size:.77rem;line-height:1.5;transition:transform .25s,border-color .25s,background .25s}
+.globe-chip:hover{transform:translateY(-3px);border-color:#ffb54799;background:#20272e}.globe-chip small{display:block;color:#ffc273;font: .57rem ui-monospace,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}.globe-chip b{color:#ffc273;font-size:.9rem;font-weight:400}.globe-chip-dot{width:6px;height:6px;flex-shrink:0;border-radius:50%;background:#ffd28a;box-shadow:0 0 12px #ffb547}
+.chip-learn{top:8%;right:0}.chip-build{bottom:26%;right:-10px}.chip-connect{left:-10px;top:45%}
+.network-caption{position:absolute;bottom:0;left:0;right:0;text-align:center;color:#a2a9ae;font: .61rem ui-monospace,Consolas,monospace;letter-spacing:.04em;margin:0}
+.site-arriving .hero-world{animation:heroWorldArrival 1.1s cubic-bezier(.2,.65,.2,1) both}
+@keyframes heroWorldArrival{from{opacity:0;transform:scale(1.35) rotate(-12deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@media(max-width:900px){.globe-chip{font-size:.69rem;padding:9px 10px;gap:7px}.chip-connect{left:-12px}.chip-build{right:-12px}.network-caption{font-size:.54rem}}
+@media(max-width:680px){.network-hero{height:370px!important;margin-top:30px}.hero-world{width:min(110%,400px)}.chip-learn{top:3%;right:0}.chip-build{bottom:23%;right:0}.chip-connect{left:0;top:43%}.network-caption{bottom:-2px}.globe-chip{font-size:.73rem}}
+@media(prefers-reduced-motion:reduce){.site-arriving .hero-world{animation:none}.hero-world,.globe-chip{transition:none}}
+
 </style>
 </head>
 <body class="intro-locked">
@@ -101,7 +118,7 @@ body.intro-locked{overflow:hidden}.site-arriving .hero{animation:siteArrival .65
 <div class="entry-inner"><div class="entry-mark" aria-hidden="true">✦</div><p class="entry-status" id="entryStatus" role="status">Unidentified transmission · 01</p><h1 class="entry-title" id="entryTitle">Data is the<br>ultimate <span>tool.</span></h1><p class="entry-copy" id="entryCopy">You found the edge.</p><button class="entry-enter" id="enterSite" type="button" aria-label="Enter the AWSSBG website" autofocus>Follow it <span aria-hidden="true">↗</span></button><p class="entry-foot">Some questions are doorways.</p></div></dialog>
 <header class="topbar" inert><div class="wrap topbar-inner"><a class="brand" href="#home" aria-label="AWSSBG home"><span class="brand-mark">✦</span><span class="brand-name">AWSSBG <small>MVJCE · STUDENT BUILDERS</small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="nav" id="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#events">Events</a><a href="#projects">Projects</a><a href="#community">Community</a><button class="nav-cta" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button></nav></div><div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div></header>
 <main inert>
-<section class="wrap hero" id="home"><div class="hero-copy-wrap"><div class="eyebrow">AWS Student Builder Group · MVJCE</div><h1 tabindex="-1">Learn cloud.<br>Build things.<br><span>Find your people.</span></h1><p class="hero-copy">A student community for learning AWS, building real projects, and figuring things out together. Start with curiosity. No experience needed.</p><div class="actions"><button class="btn btn-primary" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button><a class="btn btn-ghost" href="#projects">Explore projects <span aria-hidden="true">↓</span></a></div><p class="hero-note">Workshops, shared builds, and a place to start.</p></div><div class="hero-art" aria-label="Illustration of a glowing student cloud server rack"><div class="rack-scene" aria-hidden="true"><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-circuit"></div></div><div class="orbit-card oc1"><span class="mini">Learn together</span><strong>Find your first session <span class="spark">✦</span></strong><small>Start with the basics.</small></div><div class="orbit-card oc2"><span class="mini">Build with us</span><strong>Turn an idea into a project</strong><small>Learn by making.</small></div></div><a class="scroll-hint" href="#about">Scroll to explore</a></section>
+<section class="wrap hero" id="home"><div class="hero-copy-wrap"><div class="eyebrow">AWS Student Builder Group · MVJCE</div><h1 tabindex="-1">Learn cloud.<br>Build things.<br><span>Find your people.</span></h1><p class="hero-copy">A student community for learning AWS, building real projects, and figuring things out together. Start with curiosity. No experience needed.</p><div class="actions"><button class="btn btn-primary" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button><a class="btn btn-ghost" href="#projects">Explore projects <span aria-hidden="true">↓</span></a></div><p class="hero-note">Workshops, shared builds, and a place to start.</p></div><div class="hero-art network-hero" aria-label="Rotating cloud network globe with links to club activities"><div class="hero-world" aria-hidden="true"><canvas id="heroGlobe"></canvas><span class="network-orbit"></span><span class="network-orbit orbit-cross"></span></div><a class="globe-chip chip-learn" href="#events"><span class="globe-chip-dot"></span><span><small>01 / Learn</small>Find a workshop</span><b aria-hidden="true">↗</b></a><a class="globe-chip chip-build" href="#projects"><span class="globe-chip-dot"></span><span><small>02 / Build</small>Explore projects</span><b aria-hidden="true">↗</b></a><a class="globe-chip chip-connect" href="#community"><span class="globe-chip-dot"></span><span><small>03 / Connect</small>Meet the community</span><b aria-hidden="true">↗</b></a><p class="network-caption">One campus. A world of possibilities.</p></div><a class="scroll-hint" href="#about">Scroll to explore</a></section>
 <section class="wrap spotlight-wrap" aria-labelledby="spotlight-title"><div class="spotlight-panel reveal"><div class="spotlight-trace" aria-hidden="true"><span class="trace-pulse"></span></div><div class="spotlight-copy"><span class="spotlight-label">Signal 01 · Build archive</span><h2 id="spotlight-title">A signal in the cloud is taking shape.</h2><p>Every build starts with a question. Follow one team from the first spark to the thing they ship.</p><span class="spotlight-note">The trail leads from a first question to a working build.</span><div class="spotlight-actions"><a class="btn btn-primary" href="#projects">Explore project ideas <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="#join">Build with us <span aria-hidden="true">↗</span></a></div></div><div class="spotlight-preview" aria-label="Illustrative project preview placeholder"><div class="preview-window"><div class="preview-top"><i></i><i></i><i></i><span>COMMUNITY BUILD / 001</span></div><div class="preview-body"><div class="preview-kicker">Your next featured project</div><div class="preview-title">Project name goes here</div><div class="preview-description">A short demo, a real problem, and the team behind the build.</div><div class="preview-diagram"><div class="diagram-line"><span class="diagram-pulse"></span></div></div><div class="spotlight-tags"><span>Problem</span><span>Cloud tools</span><span>Team outcome</span></div></div></div></div></div></section>
 <section class="wrap club-explore" aria-label="Explore the community"><div class="explore-panel"><div><div class="explore-caption">Map of the network</div><div class="explore-title">Choose a node.</div></div><div class="explore-links"><a class="explore-link" href="#about"><span class="explore-icon" aria-hidden="true">✳</span><span>Node 01</span></a><a class="explore-link" href="#events"><span class="explore-icon" aria-hidden="true">◷</span><span>Signal log</span></a><a class="explore-link" href="#projects"><span class="explore-icon" aria-hidden="true">⌘</span><span>Build archive</span></a><a class="explore-link" href="#community"><span class="explore-icon" aria-hidden="true">◎</span><span>The circle</span></a></div></div></section>
 <section class="content" id="about"><div class="wrap"><div class="section-head reveal"><div><p class="kicker">01 / The origin</p><h2>Where curiosity finds a signal.</h2></div><p class="sub">A question in a room. A cloud account. A thing none of us had made before.</p></div><div class="cards"><article class="card reveal"><div class="card-icon">⌘</div><h3>Listen</h3><p>Every signal begins with a question worth following.</p></article><article class="card reveal"><div class="card-icon">↗</div><h3>Experiment</h3><p>Try the tools. Connect the pieces. See where the trail leads.</p></article><article class="card reveal"><div class="card-icon">◎</div><h3>Connect</h3><p>Find the people who turn a solo idea into a shared build.</p></article></div><div class="about-band reveal"><div><strong>The first step is small.</strong><p>No one arrives knowing everything. Bring one question; leave with another to explore.</p></div><div><strong>Leave something behind.</strong><p>A trace of what the network can make when its nodes connect.</p></div></div></div></section>
@@ -154,9 +171,10 @@ const entryReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let entryStarted=false;
 
 // Project a rotating sphere directly: no downloaded textures or 3D dependency.
-const globeCanvas=document.querySelector('#entryGlobe');
-const globeContext=globeCanvas.getContext('2d');
-if(globeContext){
+function createNetworkGlobe(globeCanvas,isIntro=false){
+ const globeContext=globeCanvas.getContext('2d');
+ if(!globeContext)return {start(){},angle(){return -.65;},setAngle(){}};
+ let globeFrame=0,globeVisible=isIntro,lastGlobeScroll=scrollY;
  let globeSize=0,globeTurn=-.65,globeLast=0;
  const globeTilt=.22;
  const globeNodes=[[13,78],[52,0],[40,-74],[1,104],[-33,151],[37,-122]];
@@ -180,22 +198,25 @@ if(globeContext){
   return a.map((v,i)=>(Math.sin((1-t)*angle)*v+Math.sin(t*angle)*b[i])/den);
  }
  function resizeGlobe(){
-  globeSize=globeCanvas.getBoundingClientRect().width;
   // The reveal scales the element, so only resize its backing canvas on viewport changes.
   globeSize=globeCanvas.clientWidth;
   const ratio=Math.min(devicePixelRatio||1,1.75);
   globeCanvas.width=Math.round(globeSize*ratio);globeCanvas.height=Math.round(globeSize*ratio);
   globeContext.setTransform(ratio,0,0,ratio,0,0);
-  if(entryReduced)requestAnimationFrame(drawGlobe);
+
  }
- resizeGlobe();addEventListener('resize',resizeGlobe,{passive:true});
+ resizeGlobe();addEventListener('resize',()=>{resizeGlobe();startGlobe();},{passive:true});
  const gridLines=[];
  for(let lat=-60;lat<=60;lat+=20){const line=[];for(let lon=0;lon<=360;lon+=5)line.push(spherePoint(lat,lon));gridLines.push(line);}
  for(let lon=0;lon<180;lon+=20){const line=[];for(let t=0;t<=360;t+=5){const a=t*Math.PI/180,b=lon*Math.PI/180;line.push([Math.cos(a)*Math.sin(b),Math.sin(a),Math.cos(a)*Math.cos(b)]);}gridLines.push(line);}
  function drawGlobe(now){
-  if(!entryGate.open)return;
+  globeFrame=0;
+  if((isIntro&&!entryGate.open)||(!isIntro&&(entryGate.open||!globeVisible))||document.hidden)return;
   const delta=globeLast?Math.min(now-globeLast,60):0;globeLast=now;
-  if(!entryReduced)globeTurn+=delta*(entryStarted ? .00085 : .00011);
+  if(!entryReduced){
+   globeTurn+=delta*(isIntro&&entryStarted ? .00085 : .00011);
+   if(!isIntro){globeTurn+=(scrollY-lastGlobeScroll)*.00065;lastGlobeScroll=scrollY;}
+  }
   const ctx=globeContext,c=globeSize/2,r=globeSize*.385;
   ctx.clearRect(0,0,globeSize,globeSize);
   const atmosphere=ctx.createRadialGradient(c,c,r*.65,c,c,r*1.18);
@@ -216,15 +237,25 @@ if(globeContext){
    ctx.beginPath();
    for(let i=0;i<=48;i++){const t=i/48,p=projectGlobe(globeArc(a,b,t),1+Math.sin(t*Math.PI)*.13);if(p.z>-.03){if(i===0)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y);}else ctx.moveTo(p.x,p.y);}
    ctx.strokeStyle='rgba(255,179,77,.38)';ctx.lineWidth=1;ctx.stroke();
-   const phase=entryReduced ? .35 :((now/(entryStarted?1650:4500)+linkIndex*.23)%1);
+   const phase=entryReduced ? .35 :((now/(isIntro&&entryStarted?1650:4500)+linkIndex*.23)%1);
    for(let tail=8;tail>=0;tail--){const t=phase-tail*.012;if(t<0)continue;const p=projectGlobe(globeArc(a,b,t),1+Math.sin(t*Math.PI)*.13);if(p.z<0)continue;ctx.beginPath();ctx.arc(p.x,p.y,tail===0?2.5:1.3,0,Math.PI*2);ctx.fillStyle=`rgba(255,225,174,${(1-tail/9)*.95})`;ctx.shadowColor='#ffb547';ctx.shadowBlur=tail===0?12:3;ctx.fill();}
    ctx.shadowBlur=0;
   });
   nodeVectors.forEach(v=>{const p=projectGlobe(v);if(p.z<0)return;ctx.beginPath();ctx.arc(p.x,p.y,2.8,0,Math.PI*2);ctx.fillStyle='#ffe1a8';ctx.shadowColor='#ffb547';ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;ctx.beginPath();ctx.arc(p.x,p.y,7,0,Math.PI*2);ctx.strokeStyle='#ffb54755';ctx.stroke();});
-  if(!entryReduced)requestAnimationFrame(drawGlobe);
+  if(!entryReduced)globeFrame=requestAnimationFrame(drawGlobe);
  }
- requestAnimationFrame(drawGlobe);
+ function startGlobe(){if(!globeFrame){globeLast=0;lastGlobeScroll=scrollY;globeFrame=requestAnimationFrame(drawGlobe);}}
+ if(!isIntro){
+  const globeObserver=new IntersectionObserver(entries=>{globeVisible=entries[0].isIntersecting;if(globeVisible)startGlobe();},{rootMargin:'100px'});
+  globeObserver.observe(globeCanvas);
+ }
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)startGlobe();});
+ if(isIntro)startGlobe();
+ return {start:startGlobe,angle:()=>globeTurn,setAngle:value=>{globeTurn=value;}};
 }
+const entranceNetwork=createNetworkGlobe(document.querySelector('#entryGlobe'),true);
+const heroNetwork=createNetworkGlobe(document.querySelector('#heroGlobe'));
+
 
 enterSite.focus();
 function entryHint(near){if(!entryStarted)entryStatus.textContent=near?'Connection within reach.':'Unidentified transmission · 01';}
@@ -249,6 +280,8 @@ enterSite.addEventListener('click',()=>{
  entryGate.classList.add('is-entering');
  const revealSite=()=>{
   entryGate.close();
+  heroNetwork.setAngle(entranceNetwork.angle());
+  heroNetwork.start();
   document.body.classList.remove('intro-locked');
   document.body.classList.add('site-arriving');
   document.querySelectorAll('header[inert],main[inert],footer[inert]').forEach(el=>el.removeAttribute('inert'));
