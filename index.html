@@ -112,7 +112,7 @@ body{background:#080d12;color:#eff1ed;overflow:hidden}.reading-progress{display:
 .world-main{height:calc(100dvh - 76px)}.world-stage{position:relative;height:100%;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 62% 45%,#ffb5470b,transparent 58%),radial-gradient(circle at 20% 10%,#31627a0b,transparent 35%),#080d12}
 .world-stage:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(#a8c4d64d .6px,transparent .8px);background-size:67px 71px;mask-image:radial-gradient(ellipse at center,#000,transparent 75%)}
 .world-intro{position:absolute;z-index:2;left:5%;top:9%;pointer-events:none;max-width:310px}.world-intro .kicker{color:#ffbe6c;font-size:.61rem}.world-intro h1{font-size:clamp(2rem,4.3vw,4.3rem);line-height:1.02;letter-spacing:-.06em;font-weight:520;margin:14px 0 18px;color:#f3f0e8}.world-intro h1 span{color:#ffb65b}.world-intro h1:focus{outline:none}.world-intro p:last-child{color:#93a0ac;font-size:.83rem;line-height:1.8}
-.world-field{position:absolute;width:min(78vw,94vh,1000px);aspect-ratio:1;left:60%;top:47%;transform:translate(-50%,-50%);outline:none;isolation:isolate}.world-field:focus-visible{outline:1px dashed #ffb54788;outline-offset:-10%;border-radius:50%}.world-field canvas{width:100%;height:100%;display:block;cursor:grab;position:relative;z-index:1}.world-field canvas:active{cursor:grabbing}
+.world-field{position:absolute;width:min(78vw,94vh,1000px);aspect-ratio:1;left:60%;top:43%;transform:translate(-50%,-50%);outline:none;isolation:isolate}.world-field:focus-visible{outline:1px dashed #ffb54788;outline-offset:-10%;border-radius:50%}.world-field canvas{width:100%;height:100%;display:block;cursor:grab;position:relative;z-index:1}.world-field canvas:active{cursor:grabbing}
 .world-atmosphere{position:absolute;z-index:0;inset:11.5%;border-radius:50%;box-shadow:0 0 100px #ffb54712,inset 0 0 65px #ffb54708;border:1px solid #ffb54718;pointer-events:none}.world-atmosphere:before{content:"";position:absolute;inset:-9%;border:1px dashed #ffb54716;border-radius:50%;transform:rotate(-20deg) scaleY(.46)}
 .world-hotspots{position:absolute;inset:0;z-index:3;pointer-events:none}.world-hotspot{position:absolute;transform:translate(-10px,-50%);display:flex;align-items:center;gap:9px;border:1px solid #ffb5474d;border-radius:13px;background:#0c141de8;backdrop-filter:blur(9px);color:#faf3e9;padding:9px 12px 9px 8px;box-shadow:0 7px 30px #0006;cursor:pointer;text-align:left;white-space:nowrap;pointer-events:auto;font-size:.76rem;line-height:1.35;transition:border-color .2s,background .2s}.world-hotspot i{width:7px;height:7px;border-radius:50%;background:#ffda9f;box-shadow:0 0 12px #ffb547;flex-shrink:0}.world-hotspot small{display:block;color:#ac976f;font:.49rem ui-monospace,Consolas,monospace;letter-spacing:.1em;margin-bottom:4px}.world-hotspot b{font-weight:400;color:#ffbf6a;margin-left:7px}.world-hotspot:hover,.world-hotspot.is-active{border-color:#ffd28a;background:#202831}.world-hotspot[hidden],[data-world-section][hidden]{display:none!important}
 .world-instructions{position:absolute;bottom:112px;left:0;right:0;text-align:center;color:#7f8e9b;font:.64rem ui-monospace,Consolas,monospace;letter-spacing:.025em;pointer-events:none}.world-instructions span{color:#ffbf6a;margin-right:8px}
@@ -129,6 +129,8 @@ body{background:#080d12;color:#eff1ed;overflow:hidden}.reading-progress{display:
 .world-field{transition:left .5s cubic-bezier(.2,.65,.2,1)}.world-intro{transition:opacity .3s}.world-panel-open .world-field{left:28%}.world-panel-open .world-intro{opacity:.15}
 @media(max-width:680px){.world-panel-open .world-field{left:50%}}
 @media(prefers-reduced-motion:reduce){.world-field,.world-intro{transition:none}}
+
+.world-panel .join-panel{background:radial-gradient(ellipse at 85% 10%,#ffb54719,transparent 50%),linear-gradient(135deg,#111b24,#27323a);color:#fff;border-color:#ffb54740}.world-panel .join-panel h2{color:#fff}.world-panel .join-panel .kicker{color:#ffd28a}.world-panel .join-panel p{color:#c7d0d7}.world-panel .join-panel .join-foot{color:#9caab6}.world-panel .join-panel .btn{background:#ffb547;color:#211606}.world-panel .filter.active,.world-panel .filter:hover{background:#ffb547;color:#211606;border-color:#ffb547}.world-panel .event-count{background:#ece8de;color:#756e60}
 
 </style>
 </head>
@@ -188,7 +190,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
  const globeHotspots=isIntro?[]:[...document.querySelectorAll('[data-world-node]')];
  let globeSize=0,globeTurn=-.65,globeLast=0;
  let globeTilt=.22;
- const globeNodes=[[13,78],[52,0],[40,-74],[1,104],[-33,151],[37,-122]];
+ const globeNodes=isIntro?[[13,78],[52,0],[40,-74],[1,104],[-33,151],[37,-122]]:[[25,60],[55,-20],[5,-110],[-35,10],[-25,150],[37,-122]];
  const globeLinks=[[0,1],[0,3],[1,2],[3,4],[2,5]];
  const spherePoint=(lat,lon)=>{
   const a=lat*Math.PI/180,b=lon*Math.PI/180;
@@ -233,6 +235,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
    const p=projectGlobe(nodeVectors[Number(button.dataset.worldNode)]);
    button.hidden=p.z<.1;
    button.style.left=(p.x/globeSize*100)+'%';button.style.top=(p.y/globeSize*100)+'%';
+   button.style.transform=p.x>globeSize/2?'translate(calc(-100% + 10px),-50%)':'translate(-10px,-50%)';
    button.style.zIndex=String(Math.round((p.z+1)*10));
   });
   const ctx=globeContext,c=globeSize/2,r=globeSize*.385;
