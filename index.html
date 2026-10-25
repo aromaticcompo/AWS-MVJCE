@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#080b10">
-<meta name="description" content="A signal has reached MVJCE. Its source is still unknown.">
+<meta name="description" content="You found the edge. Follow the signal to AWSSBG at MVJCE.">
 <title>Transmission 01 · MVJCE</title>
 <style>
 :root{color-scheme:dark;--bg:#080b10;--panel:#101720;--panel2:#141e28;--line:rgba(255,181,71,.17);--amber:#ffb547;--amber2:#ffd28a;--text:#f3f0ea;--muted:#a0a8b2;--max:1120px;--radius:20px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -35,37 +35,47 @@ body:before{background:radial-gradient(ellipse at 78% 8%,rgba(232,117,0,.08),tra
 .spotlight-trace .trace-pulse,.diagram-pulse{animation-duration:var(--trace-duration,3.8s);filter:brightness(var(--trace-brightness,1));transition:filter .18s ease}
 .nav-cta{border:0;border-radius:999px;cursor:pointer;font:inherit}.join-gate{width:min(560px,calc(100% - 32px));max-width:560px;padding:0;border:1px solid #e8750066;border-radius:24px;background:transparent;color:#fff;overflow:visible}.join-gate::backdrop{background:#090b10c9;backdrop-filter:blur(9px)}.join-gate-card{position:relative;overflow:hidden;padding:clamp(27px,6vw,45px);border-radius:23px;background:radial-gradient(ellipse at 90% 5%,#e8750029,transparent 42%),linear-gradient(145deg,#171b1e,#25262a)}.join-gate-card:after{content:"";position:absolute;left:0;right:0;top:41%;height:1px;opacity:.35;background:linear-gradient(90deg,transparent,#e87500,transparent);pointer-events:none}.gate-label{color:#ffad56;font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.join-gate h2{font-size:clamp(2rem,6vw,2.8rem);line-height:1.05;letter-spacing:-.05em;margin:12px 0;color:#fff}.gate-copy{max-width:47ch;color:#c3c7ca;font-size:.93rem}.gate-path{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:24px 0}.gate-path div{position:relative;z-index:1;display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid #ffffff18;border-radius:13px;background:#111820}.gate-path span{color:#ffad56;font: .65rem ui-monospace,monospace}.gate-path b{font-size:.87rem}.gate-path small{font-size:.68rem;color:#aab2b7}.gate-foot{margin:13px 0 0;color:#929ba0;font-size:.72rem}.gate-close{position:absolute;top:15px;right:16px;z-index:2;width:34px;height:34px;border:1px solid #ffffff25;border-radius:50%;background:#111820;color:#fff;font-size:1.25rem;cursor:pointer}.gate-close:hover{border-color:#e87500;color:#ffad56}.join-gate .btn{position:relative;z-index:1}.join-gate[open]{animation:gateIn .2s ease-out}@keyframes gateIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:520px){.gate-path{grid-template-columns:1fr}.gate-path div{display:grid;grid-template-columns:32px 1fr}.gate-path small{grid-column:2}.join-gate-card{padding-top:42px}}@media(prefers-reduced-motion:reduce){.join-gate[open]{animation:none}}
 
-.entry-gate{position:fixed;inset:0;z-index:1000;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;color:#f3f0ea;background:#070a0e;overflow:auto}
-.entry-gate::backdrop{background:#070a0e}
+
+.entry-gate{position:fixed;inset:0;z-index:1000;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;color:#f3f0ea;background:#070a0e;overflow:auto;isolation:isolate;--pointer-x:50%;--pointer-y:45%;transition:opacity .42s .28s}
 .entry-gate[open]{display:grid;place-items:center}
-.entry-gate:before,.entry-gate:after{content:"";position:absolute;pointer-events:none}
-.entry-gate:before{inset:0;background:radial-gradient(ellipse at 52% 44%,#ffb5470d,transparent 43%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,58px 58px,58px 58px;mask-image:linear-gradient(to bottom,#000 8%,transparent 90%)}
-.entry-gate:after{width:min(68vw,650px);aspect-ratio:1;border:1px solid #ffb5471b;border-radius:50%;box-shadow:0 0 0 44px #ffb54706,0 0 0 110px #ffb54704;left:50%;top:47%;transform:translate(-50%,-50%)}
-.entry-inner{position:relative;z-index:1;width:min(680px,calc(100% - 42px));text-align:center;padding:50px 0}
-.entry-mark{position:relative;width:72px;height:72px;margin:0 auto 34px;border:1px solid #ffb54755;border-radius:23px;display:grid;place-items:center;color:var(--amber2);font-size:1.55rem;background:linear-gradient(145deg,#ffb5471b,#0c1117);box-shadow:0 0 48px #ffb54715;transform:rotate(-8deg)}
-.entry-mark:before,.entry-mark:after{content:"";position:absolute;border:1px solid #ffb54740;border-radius:50%;inset:-10px;transform:rotate(32deg) scaleX(1.35)}
-.entry-mark:after{inset:-19px;border-color:#ffb54720;transform:rotate(-28deg) scaleX(1.35)}
-.entry-status{color:#8de1b1;font:700 .68rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.19em;text-transform:uppercase;margin:0 0 21px}
-.entry-status:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor;margin:0 10px 1px 0;animation:entryPulse 2.2s ease-in-out infinite}
-.entry-title{font-size:clamp(3.3rem,9vw,7.1rem);font-weight:540;line-height:.91;letter-spacing:-.075em;margin:0 auto;max-width:10ch;color:#f3f0ea}
-.entry-title span{color:#ff9c35}
-.entry-copy{max-width:340px;margin:23px auto 0;color:#8d98a3;font-size:.94rem;line-height:1.7}
-.entry-enter{display:inline-flex;align-items:center;gap:16px;margin-top:37px;padding:13px 19px 13px 23px;border:1px solid #ffb54757;border-radius:999px;background:#ffb5470b;color:var(--amber2);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;cursor:pointer;color:#ffd28a;transition:background .2s,border-color .2s,transform .2s}
-.entry-enter:hover{background:#ffb54718;border-color:var(--amber);transform:translateY(-2px)}
-.entry-enter span{font-size:1.15rem;line-height:1}
-.entry-foot{margin:44px 0 0;color:#58636f;font: .63rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}
-body.intro-locked{overflow:hidden}
-@keyframes entryPulse{50%{opacity:.4;box-shadow:0 0 3px currentColor}}
-@media(max-width:520px){.entry-mark{width:62px;height:62px;margin-bottom:30px}.entry-copy{font-size:.88rem}.entry-after{display:none}}
-@media(prefers-reduced-motion:reduce){.entry-status:before{animation:none}}
+.entry-gate::backdrop{background:#070a0e}
+.entry-gate:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(280px circle at var(--pointer-x) var(--pointer-y),#ffae5012,transparent 85%),radial-gradient(ellipse at 50% 45%,#ffb54708,transparent 55%),linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:auto,auto,58px 58px,58px 58px}
+.entry-gate:after{content:"";position:absolute;z-index:-1;width:min(76vw,670px);aspect-ratio:1;border:1px solid #ffb54725;border-radius:50%;box-shadow:0 0 0 42px #ffb54705,0 0 0 105px #ffb54703;left:50%;top:47%;transform:translate(-50%,-50%);transition:transform .75s cubic-bezier(.2,.65,.2,1),border-color .4s,box-shadow .4s;pointer-events:none}
+.entry-inner{position:relative;z-index:2;width:min(680px,calc(100% - 40px));text-align:center;padding:60px 0;transition:opacity .28s,transform .5s}
+.entry-mark{position:relative;width:64px;height:64px;margin:0 auto 34px;border:1px solid #ffb54750;border-radius:21px;display:grid;place-items:center;color:#ffd28a;font-size:1.5rem;background:linear-gradient(145deg,#ffb54716,#0c1117);box-shadow:0 0 45px #ffb54710;transform:rotate(-8deg)}
+.entry-mark:before,.entry-mark:after{content:"";position:absolute;border:1px solid #ffb54730;border-radius:50%;inset:-12px;transform:rotate(32deg) scaleX(1.35)}
+.entry-mark:after{inset:-22px;border-color:#ffb54715;transform:rotate(-28deg) scaleX(1.35)}
+.entry-status{color:#8de1b1;font:600 .63rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.17em;text-transform:uppercase;margin:0 0 24px;min-height:1.5em}
+.entry-status:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor;margin:0 9px 1px 0;animation:entryPulse 3s ease-in-out infinite}
+.entry-title{font-size:clamp(3.25rem,9vw,7rem);font-weight:540;line-height:.94;letter-spacing:-.075em;margin:0 auto;max-width:10ch;color:#f3f0ea}
+.entry-title span{color:#ff9c35;text-shadow:0 0 65px #ff9c3515}
+.entry-copy{margin:24px auto 0;color:#a2aab1;font-size:.9rem;letter-spacing:.015em}
+.entry-enter{display:inline-flex;align-items:center;gap:24px;margin-top:35px;padding:14px 22px 14px 26px;border:1px solid #ffb54760;border-radius:999px;background:#ffb54708;color:#ffd28a;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .25s,transform .25s}
+.entry-enter:hover{background:#ffb54716;border-color:#ffb547;box-shadow:0 0 30px #ffb54715;transform:translateY(-2px)}
+.entry-enter:focus-visible{outline:2px solid #ffd28a;outline-offset:5px}
+.entry-enter span{font-size:1.1rem;transition:transform .25s}.entry-enter:hover span{transform:translate(3px,-3px)}
+.entry-foot{margin:40px 0 0;color:#7b858e;font: .6rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;text-transform:uppercase}
+.entry-circuit{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.5}
+.entry-circuit .wire{fill:none;stroke:#ffb547;stroke-width:1;vector-effect:non-scaling-stroke;opacity:.24}
+.entry-circuit .current{fill:none;stroke:#ffd28a;stroke-width:1.8;vector-effect:non-scaling-stroke;stroke-dasharray:12 650;animation:entryCurrent 9s linear infinite;opacity:.7}
+.entry-circuit circle{fill:#070a0e;stroke:#ffb547;stroke-width:1;vector-effect:non-scaling-stroke}
+.entry-coord{position:absolute;z-index:1;color:#6f7983;font: .59rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.15em;pointer-events:none}.entry-coord.top{left:32px;top:30px}.entry-coord.bottom{right:32px;bottom:30px}.entry-coord b{color:#a3aaaf;font-weight:400}
+.entry-gate.is-entering{opacity:0;pointer-events:none}.entry-gate.is-entering .entry-inner{opacity:0;transform:scale(.96)}.entry-gate.is-entering:after{transform:translate(-50%,-50%) scale(2.7);border-color:#ffd28a88;box-shadow:0 0 50px #ffb54725,0 0 0 44px #ffb5470c}.entry-gate.is-entering .entry-circuit{opacity:1}.entry-gate.is-entering .current{animation-duration:.65s;stroke-width:3}
+body.intro-locked{overflow:hidden}.site-arriving .hero{animation:siteArrival .65s ease-out both}.hero h1:focus{outline:none}
+@keyframes entryPulse{50%{opacity:.4;box-shadow:0 0 3px currentColor}}@keyframes entryCurrent{to{stroke-dashoffset:-1324}}@keyframes siteArrival{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.entry-inner{padding:80px 0}.entry-mark{width:55px;height:55px;margin-bottom:33px}.entry-coord.top{left:20px;top:22px}.entry-coord.bottom{right:20px;bottom:22px}.entry-gate:after{width:95vw}.entry-circuit{opacity:.3}.entry-status{font-size:.56rem;letter-spacing:.13em}.entry-foot{font-size:.54rem}}
+@media(prefers-reduced-motion:reduce){.entry-gate,.entry-inner,.entry-gate:after{transition:none}.entry-status:before,.entry-circuit .current,.site-arriving .hero{animation:none}.entry-enter:hover{transform:none}}
 
 </style>
 </head>
 <body class="intro-locked">
-<dialog class="entry-gate" id="entryGate" open role="dialog" aria-modal="true" aria-labelledby="entryTitle" aria-describedby="entryCopy"><div class="entry-inner"><div class="entry-mark" aria-hidden="true">✦</div><p class="entry-status">Unidentified transmission · 01</p><h1 class="entry-title" id="entryTitle">Something<br>is <span>forming.</span></h1><p class="entry-copy" id="entryCopy">A signal has reached MVJCE. Its source is still unknown.</p><button class="entry-enter" id="enterSite" type="button" autofocus>Enter the signal <span aria-hidden="true">↗</span></button><p class="entry-foot">MVJCE &nbsp; / &nbsp; CONNECTION UNKNOWN</p></div></dialog>
-<header class="topbar" inert><div class="wrap topbar-inner"><a class="brand" href="#home" aria-label="AWSSBG home"><span class="brand-mark">✦</span><span class="brand-name">AWSSBG <small>MVJCE · TRANSMISSION 01</small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="nav" id="nav" aria-label="Main navigation"><a href="#about">Origin</a><a href="#events">Signals</a><a href="#projects">Artifacts</a><a href="#community">The circle</a><button class="nav-cta" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button></nav></div><div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div></header>
+<dialog class="entry-gate" id="entryGate" open role="dialog" aria-modal="true" aria-labelledby="entryTitle" aria-describedby="entryCopy">
+<svg class="entry-circuit" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="wire" d="M0 260H180L240 320H350M0 560H135L210 485H325M1400 220H1240L1170 290H1080M1400 590H1210L1145 525H1070"/><path class="current" d="M0 260H180L240 320H350M1400 590H1210L1145 525H1070"/><circle cx="350" cy="320" r="4"/><circle cx="325" cy="485" r="3"/><circle cx="1080" cy="290" r="3"/><circle cx="1070" cy="525" r="4"/></svg>
+<div class="entry-coord top">TRACE <b>/ 001</b><br>ORIGIN / —</div><div class="entry-coord bottom">CHANNEL / <b>OPEN</b><br>MVJCE / ↗</div>
+<div class="entry-inner"><div class="entry-mark" aria-hidden="true">✦</div><p class="entry-status" id="entryStatus" role="status">Unidentified transmission · 01</p><h1 class="entry-title" id="entryTitle">Something<br>is <span>forming.</span></h1><p class="entry-copy" id="entryCopy">You found the edge.</p><button class="entry-enter" id="enterSite" type="button" aria-label="Enter the AWSSBG website" autofocus>Follow it <span aria-hidden="true">↗</span></button><p class="entry-foot">Some questions are doorways.</p></div></dialog>
+<header class="topbar" inert><div class="wrap topbar-inner"><a class="brand" href="#home" aria-label="AWSSBG home"><span class="brand-mark">✦</span><span class="brand-name">AWSSBG <small>MVJCE · STUDENT BUILDERS</small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="nav" id="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#events">Events</a><a href="#projects">Projects</a><a href="#community">Community</a><button class="nav-cta" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button></nav></div><div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div></header>
 <main inert>
-<section class="wrap hero" id="home"><div class="hero-copy-wrap"><div class="eyebrow">Unidentified signal · MVJCE</div><h1 tabindex="-1">Something<br>is forming.<br><span>Find the signal.</span></h1><p class="hero-copy">A few traces in the cloud. A question nobody has answered yet. Keep going.</p><div class="actions"><button class="btn btn-primary" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button><a class="btn btn-ghost" href="#about">Follow the signal <span aria-hidden="true">↓</span></a></div><p class="hero-note">If you recognize the signal, you are already close.</p></div><div class="hero-art" aria-label="Illustration of a glowing student cloud server rack"><div class="rack-scene" aria-hidden="true"><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-circuit"></div></div><div class="orbit-card oc1"><span class="mini">Node / 07</span><strong>Two minds connected <span class="spark">✦</span></strong><small>A new line appears.</small></div><div class="orbit-card oc2"><span class="mini">Trace / 02</span><strong>Someone is building</strong><small>The trail gets warmer.</small></div></div><a class="scroll-hint" href="#about">Scroll to explore</a></section>
+<section class="wrap hero" id="home"><div class="hero-copy-wrap"><div class="eyebrow">AWS Student Builder Group · MVJCE</div><h1 tabindex="-1">Learn cloud.<br>Build things.<br><span>Find your people.</span></h1><p class="hero-copy">A student community for learning AWS, building real projects, and figuring things out together. Start with curiosity. No experience needed.</p><div class="actions"><button class="btn btn-primary" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button><a class="btn btn-ghost" href="#projects">Explore projects <span aria-hidden="true">↓</span></a></div><p class="hero-note">Workshops, shared builds, and a place to start.</p></div><div class="hero-art" aria-label="Illustration of a glowing student cloud server rack"><div class="rack-scene" aria-hidden="true"><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-tower"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-circuit"></div></div><div class="orbit-card oc1"><span class="mini">Learn together</span><strong>Find your first session <span class="spark">✦</span></strong><small>Start with the basics.</small></div><div class="orbit-card oc2"><span class="mini">Build with us</span><strong>Turn an idea into a project</strong><small>Learn by making.</small></div></div><a class="scroll-hint" href="#about">Scroll to explore</a></section>
 <section class="wrap spotlight-wrap" aria-labelledby="spotlight-title"><div class="spotlight-panel reveal"><div class="spotlight-trace" aria-hidden="true"><span class="trace-pulse"></span></div><div class="spotlight-copy"><span class="spotlight-label">Signal 01 · Build archive</span><h2 id="spotlight-title">A signal in the cloud is taking shape.</h2><p>Every build starts with a question. Follow one team from the first spark to the thing they ship.</p><span class="spotlight-note">The trail leads from a first question to a working build.</span><div class="spotlight-actions"><a class="btn btn-primary" href="#projects">Explore project ideas <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="#join">Build with us <span aria-hidden="true">↗</span></a></div></div><div class="spotlight-preview" aria-label="Illustrative project preview placeholder"><div class="preview-window"><div class="preview-top"><i></i><i></i><i></i><span>COMMUNITY BUILD / 001</span></div><div class="preview-body"><div class="preview-kicker">Your next featured project</div><div class="preview-title">Project name goes here</div><div class="preview-description">A short demo, a real problem, and the team behind the build.</div><div class="preview-diagram"><div class="diagram-line"><span class="diagram-pulse"></span></div></div><div class="spotlight-tags"><span>Problem</span><span>Cloud tools</span><span>Team outcome</span></div></div></div></div></div></section>
 <section class="wrap club-explore" aria-label="Explore the community"><div class="explore-panel"><div><div class="explore-caption">Map of the network</div><div class="explore-title">Choose a node.</div></div><div class="explore-links"><a class="explore-link" href="#about"><span class="explore-icon" aria-hidden="true">✳</span><span>Node 01</span></a><a class="explore-link" href="#events"><span class="explore-icon" aria-hidden="true">◷</span><span>Signal log</span></a><a class="explore-link" href="#projects"><span class="explore-icon" aria-hidden="true">⌘</span><span>Build archive</span></a><a class="explore-link" href="#community"><span class="explore-icon" aria-hidden="true">◎</span><span>The circle</span></a></div></div></section>
 <section class="content" id="about"><div class="wrap"><div class="section-head reveal"><div><p class="kicker">01 / The origin</p><h2>Where curiosity finds a signal.</h2></div><p class="sub">A question in a room. A cloud account. A thing none of us had made before.</p></div><div class="cards"><article class="card reveal"><div class="card-icon">⌘</div><h3>Listen</h3><p>Every signal begins with a question worth following.</p></article><article class="card reveal"><div class="card-icon">↗</div><h3>Experiment</h3><p>Try the tools. Connect the pieces. See where the trail leads.</p></article><article class="card reveal"><div class="card-icon">◎</div><h3>Connect</h3><p>Find the people who turn a solo idea into a shared build.</p></article></div><div class="about-band reveal"><div><strong>The first step is small.</strong><p>No one arrives knowing everything. Bring one question; leave with another to explore.</p></div><div><strong>Leave something behind.</strong><p>A trace of what the network can make when its nodes connect.</p></div></div></div></section>
@@ -113,12 +123,38 @@ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.
 nav.addEventListener('click',e=>{if(e.target.closest('a,button')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰'}});
 const entryGate=document.querySelector('#entryGate');
 const enterSite=document.querySelector('#enterSite');
+const entryStatus=document.querySelector('#entryStatus');
+const entryReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let entryStarted=false;
 enterSite.focus();
+function entryHint(near){if(!entryStarted)entryStatus.textContent=near?'Connection within reach.':'Unidentified transmission · 01';}
+enterSite.addEventListener('pointerenter',()=>entryHint(true));
+enterSite.addEventListener('pointerleave',()=>entryHint(false));
+if(!entryReduced&&matchMedia('(pointer:fine)').matches){
+ let pointerFrame=0;
+ entryGate.addEventListener('pointermove',event=>{
+  if(pointerFrame||entryStarted)return;
+  pointerFrame=requestAnimationFrame(()=>{
+   entryGate.style.setProperty('--pointer-x',event.clientX+'px');
+   entryGate.style.setProperty('--pointer-y',event.clientY+'px');
+   pointerFrame=0;
+  });
+ });
+}
 enterSite.addEventListener('click',()=>{
- entryGate.close();
- document.body.classList.remove('intro-locked');
- document.querySelectorAll('header[inert],main[inert],footer[inert]').forEach(el=>el.removeAttribute('inert'));
- document.querySelector('#home h1').focus({preventScroll:true});
+ if(entryStarted)return;
+ entryStarted=true;
+ enterSite.disabled=true;
+ entryStatus.textContent='Signal received. Opening the connection.';
+ entryGate.classList.add('is-entering');
+ const revealSite=()=>{
+  entryGate.close();
+  document.body.classList.remove('intro-locked');
+  document.body.classList.add('site-arriving');
+  document.querySelectorAll('header[inert],main[inert],footer[inert]').forEach(el=>el.removeAttribute('inert'));
+  document.querySelector('#home h1').focus({preventScroll:true});
+ };
+ if(entryReduced)revealSite();else setTimeout(revealSite,730);
 });
 const toast=document.querySelector('#toast');let toastTimer;
 const joinGate=document.querySelector('#joinGate');
