@@ -32,6 +32,7 @@ body:before{background:radial-gradient(ellipse at 78% 8%,rgba(232,117,0,.08),tra
 .club-explore{padding:16px 0 2px}.explore-panel{display:grid;grid-template-columns:.75fr 1.8fr;align-items:center;gap:20px;padding:17px 20px;border:1px solid #e6e3dc;border-radius:20px;background:#fff;box-shadow:0 8px 28px #171b1e08}.explore-caption{font-size:.68rem;color:#777d80;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.explore-title{font-weight:700;letter-spacing:-.02em;margin-top:3px;color:#171b1e}.explore-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.explore-link{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:13px;text-decoration:none;border:1px solid #eeece7;background:#fbfaf8;transition:transform .2s,border-color .2s,box-shadow .2s}.explore-link:hover{transform:translateY(-2px);border-color:#e8750066;box-shadow:0 6px 18px #171b1e0b}.explore-icon{flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#fff0e2;color:#d56400;font-size:1rem;font-weight:800}.explore-link:nth-child(2) .explore-icon{background:#eaf0ff;color:#365fb4}.explore-link:nth-child(3) .explore-icon{background:#f1eafd;color:#7040a7}.explore-link:nth-child(4) .explore-icon{background:#e4f5ed;color:#177c5f}.explore-link span:last-child{font-size:.76rem;font-weight:700;color:#30363a}.event-count{display:inline-flex;padding:5px 10px;border-radius:999px;background:#f1eafd;color:#7040a7;font-weight:700}.filter.active,.filter:hover{background:#663b96;border-color:#663b96;color:#fff}.event-card{border-radius:18px}.event-card:nth-child(3n+1) .event-art{background:radial-gradient(circle at 80% 15%,#e8750034,transparent 38%),repeating-linear-gradient(135deg,#e875000b 0 2px,transparent 2px 13px),#fff5e9}.event-card:nth-child(3n+2) .event-art{background:radial-gradient(circle at 80% 15%,#5d82df32,transparent 38%),repeating-linear-gradient(135deg,#5d82df0b 0 2px,transparent 2px 13px),#f1f4ff}.event-card:nth-child(3n) .event-art{background:radial-gradient(circle at 80% 15%,#7d4db232,transparent 38%),repeating-linear-gradient(135deg,#7d4db20b 0 2px,transparent 2px 13px),#f6f0fc}.project-card,.person{border-radius:18px}.project-card:nth-child(4n+2) .card-icon{background:#eaf0ff;color:#365fb4;border-color:#dce5ff}.project-card:nth-child(4n+3) .card-icon{background:#e4f5ed;color:#177c5f;border-color:#cdebdc}.project-card:nth-child(4n+4) .card-icon{background:#f1eafd;color:#7040a7;border-color:#e5d9f5}.person:nth-child(4n+2) .avatar{color:#365fb4;background:#eaf0ff;border-color:#dce5ff}.person:nth-child(4n+3) .avatar{color:#177c5f;background:#e4f5ed;border-color:#cdebdc}.person:nth-child(4n+4) .avatar{color:#7040a7;background:#f1eafd;border-color:#e5d9f5}.join-panel{background:radial-gradient(ellipse at 88% 8%,#ffffff20,transparent 40%),linear-gradient(120deg,#39205e,#613692);border-color:#744ba0}.join-panel h2{color:#fff}.join-panel p{color:#e5dced}.join-panel .kicker{color:#ffbf75}.join-panel .btn-primary{background:#ff9c32;color:#27180a;box-shadow:0 8px 24px #1b0c2a35}.join-panel .btn-primary:hover{box-shadow:0 10px 30px #ff9c3260}.join-foot{color:#d9cae8}.join-panel:after{color:#ffffff0b}
 @media(max-width:850px){.explore-panel{grid-template-columns:1fr;gap:11px}.explore-links{grid-template-columns:repeat(4,minmax(120px,1fr));overflow-x:auto;padding:1px 1px 5px;scrollbar-width:thin}.explore-link{min-width:120px}}
 @media(max-width:540px){.explore-panel{padding:15px;border-radius:17px}.explore-links{grid-template-columns:repeat(4,132px)}.explore-link{padding:8px}.explore-link span:last-child{font-size:.72rem}.join-panel{background:radial-gradient(ellipse at 88% 8%,#ffffff20,transparent 40%),linear-gradient(145deg,#39205e,#613692)}}
+.spotlight-trace .trace-pulse,.diagram-pulse{animation-duration:var(--trace-duration,3.8s);filter:brightness(var(--trace-brightness,1));transition:filter .18s ease}
 </style>
 </head>
 <body>
@@ -94,8 +95,23 @@ const readingProgress=document.querySelector('#readingProgress');
 function updateReadingProgress(){const max=document.documentElement.scrollHeight-innerHeight;readingProgress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%'}
 addEventListener('scroll',updateReadingProgress,{passive:true});addEventListener('resize',updateReadingProgress);updateReadingProgress();
 </script>
+<script>
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const traceRoot=document.documentElement;
+ let traceY=scrollY,traceAt=performance.now(),settleTrace;
+ addEventListener('scroll',()=>{
+  const now=performance.now(),elapsed=Math.max(16,now-traceAt),distance=Math.abs(scrollY-traceY);
+  const speed=Math.min(distance/elapsed,1.2);
+  traceRoot.style.setProperty('--trace-duration',Math.max(1.4,3.8-speed*2.1).toFixed(2)+'s');
+  traceRoot.style.setProperty('--trace-brightness',(1+speed*.65).toFixed(2));
+  traceY=scrollY;traceAt=now;clearTimeout(settleTrace);
+  settleTrace=setTimeout(()=>{traceRoot.style.setProperty('--trace-duration','3.8s');traceRoot.style.setProperty('--trace-brightness','1')},180);
+ },{passive:true});
+}
+</script>
 </body>
 </html>
+
 
 
 
