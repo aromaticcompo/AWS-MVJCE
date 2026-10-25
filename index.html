@@ -159,6 +159,30 @@
     @media(max-width:420px){.guide-visual{height:380px}.guide-card{padding:17px}.guide-card h2{font-size:40px}.guide-label{margin-top:20px}.guide-row{padding:10px 0}}
     @media(prefers-reduced-motion:reduce){.guide-card,.guide-sticker{animation:none}.pillar:hover{transform:none}}
   </style>
+  <style>
+    /* Homepage refresh: a light, architectural introduction inspired by the supplied concept. */
+    .topbar{background:rgba(250,249,246,.9);border-color:#142a3018}
+    .navlinks a{color:#20282b}.navlinks a:hover{color:#a95e00}.nav-cta{background:#11171b;border-color:#11171b;color:#fff}.nav-cta:hover{background:#29343a}
+    .hero{width:min(1320px,calc(100% - 64px));min-height:600px;grid-template-columns:.88fr 1.12fr;gap:16px;padding:72px 0 48px;overflow:hidden}
+    .hero:before{top:5%;right:-10%;width:60vw;height:40vw;max-width:760px;max-height:560px;background:radial-gradient(ellipse,rgba(255,153,0,.13),transparent 70%)}
+    .hero-copy{padding-left:clamp(0px,3.2vw,42px)}.hero-copy>.eyebrow{color:#465157}.hero-copy>.eyebrow:before{display:none}
+    .hero h1{max-width:650px;margin:23px 0 20px;font-size:clamp(60px,7.7vw,104px);line-height:.92;letter-spacing:-.09em;color:#11191e}
+    .hero h1 em{display:block;font:800 1em/.95 var(--sans);letter-spacing:-.085em;color:#f5820b}
+    .hero-copy>p{max-width:490px;color:#4d585d;font-size:clamp(15px,1.4vw,18px);line-height:1.65}
+    .hero-actions{margin-top:25px;gap:14px}.hero-actions .button{padding:14px 19px}.hero-actions .button.ghost{border-color:transparent;color:#192227}.hero-actions .button.ghost:hover{background:#fff8ed;border-color:#f3d5aa;color:#a95e00}
+    .hero-note{display:none}.hero-proof{margin-top:24px;border:0;padding:0;gap:18px}.hero-proof span{padding:0;border:0;background:transparent;color:#47555b;font:9px var(--mono);letter-spacing:.05em;text-transform:uppercase}.hero-proof i{background:#d97800}
+    .server-visual{height:460px;align-self:end;position:relative;isolation:isolate;overflow:visible}
+    .server-visual:before{content:"";position:absolute;inset:9% -18% 0 -5%;z-index:-2;background:linear-gradient(178deg,transparent 53%,#d9d7d0 53.2%,#f1efe9 54%,#faf9f6 100%);clip-path:polygon(0 14%,100% 0,100% 100%,0 100%)}
+    .server-visual:after{content:"";position:absolute;z-index:-1;left:-10%;right:-16%;bottom:18%;height:1px;background:linear-gradient(90deg,transparent,#ff9900aa 18%,#ff9900 52%,transparent);box-shadow:0 0 10px #ff990055;transform:rotate(-2deg)}
+    .server-art{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 24px 25px #11191e19)}
+    .rack-shell{fill:url(#rack-face);stroke:#151a1d;stroke-width:2}.rack-side{fill:#101518;stroke:#242b2d;stroke-width:1}.rack-top{fill:#42494a;stroke:#252a2c;stroke-width:1}.rack-panel{fill:#202629;stroke:#525858;stroke-width:1}.rack-slot{fill:#101518;stroke:#657071;stroke-width:.7}.rack-lights{fill:#ff9900;filter:url(#led-glow)}.rack-muted{fill:#77817f}.pathway{fill:none;stroke:#ff9900;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;filter:url(#path-glow)}.pathway-soft{fill:none;stroke:#ff9900;stroke-width:1;opacity:.44}.pathway-flow{stroke-dasharray:9 17;animation:data-flow 3.8s linear infinite}.rack-floor{fill:none;stroke:#c8c6bf;stroke-width:1}.visual-caption{position:absolute;right:2%;bottom:7%;padding:10px 13px;background:#fffefa;border:1px solid #d8d6ce;color:#475257;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;box-shadow:0 9px 24px #18242710}.visual-caption i{display:inline-block;width:6px;height:6px;margin-right:7px;border-radius:50%;background:#e68a00;box-shadow:0 0 10px #ff9900;vertical-align:1px}
+    .ticker{background:#f9f8f4;border-color:#142a3020}.ticker-in{color:#475257;min-height:70px}.ticker strong{color:#11191e}.ticker .spark{color:#da7600}
+    @keyframes data-flow{to{stroke-dashoffset:-52}}
+    @media(max-width:900px){.hero{min-height:0;grid-template-columns:1fr 1fr;padding-top:68px}.hero h1{font-size:clamp(56px,8.4vw,84px)}.server-visual{height:380px}}
+    @media(max-width:760px){.hero{width:min(100% - 36px,580px);grid-template-columns:1fr;padding:64px 0 24px;gap:0}.hero-copy{padding-left:0}.hero h1{font-size:clamp(58px,14.4vw,86px);margin:19px 0}.hero-copy>p{font-size:15px}.hero-actions{gap:9px}.hero-actions .button{padding:12px 14px}.hero-proof{gap:12px;flex-wrap:wrap}.hero-proof span{font-size:8px}.server-visual{height:340px;margin:2px -10px 0}.visual-caption{bottom:5%;right:3%}.ticker{overflow:hidden}.ticker-in{justify-content:flex-start;gap:20px;overflow:hidden;white-space:nowrap}.ticker-in>*{flex:none}}
+    @media(max-width:420px){.hero h1{font-size:58px}.hero-actions .button{font-size:10px}.server-visual{height:285px;margin-inline:-14px}.visual-caption{font-size:8px}}
+    @media(prefers-reduced-motion:reduce){.pathway-flow{animation:none}}
+  </style>
 </head>
 <body>
   <div class="intro" id="boot-intro" role="dialog" aria-modal="true" aria-labelledby="boot-title">
@@ -183,14 +207,22 @@
   <main>
     <section class="wrap hero" id="home">
       <div class="hero-copy">
-        <div class="eyebrow">A student cloud community · MVJCE</div>
-        <h1>Cloud skills,<br>made <em>real.</em></h1>
-        <p>Go from your first cloud concept to a small build you can explain. AWS@MVJCE is a space for MVJCE students to learn by doing—and to do it together.</p>
-        <div class="hero-actions"><a class="button" href="#approach">Explore the learning path <span class="arrow">↓</span></a><a class="button ghost" href="https://aws.amazon.com/training/">Discover AWS learning <span class="arrow">↗</span></a></div>
-        <div class="hero-note"><i></i> Start with curiosity. Leave with a build.</div>
+        <div class="eyebrow">People&nbsp; / &nbsp;Technology&nbsp; / &nbsp;A brighter tomorrow</div>
+        <h1>Students.<br>Cloud.<br><em>Real impact.</em></h1>
+        <p>A student-led community exploring cloud technology and building useful things together.</p>
+        <div class="hero-actions"><a class="button" href="#about">Explore the community <span class="arrow">→</span></a><a class="button ghost" href="#approach">See our learning path <span class="arrow">→</span></a></div>
         <div class="hero-proof" aria-label="What the community is about"><span><i></i>Student-led</span><span><i></i>Learn by doing</span><span><i></i>Share openly</span></div>
       </div>
-      <div class="visual guide-visual" role="img" aria-label="AWS at MVJCE field guide showing a three-step path: understand, build, share"><div class="guide-glow" aria-hidden="true"></div><div class="guide-card"><div class="guide-card-top"><span>FIELD GUIDE&nbsp; / &nbsp;001</span><strong>aws<span>↗</span></strong></div><div class="guide-label"><span>YOUR CLOUD STARTER</span><span>01 — 03</span></div><h2>Make the<br>cloud <em>click.</em></h2><div class="guide-divider"></div><div class="guide-row"><b>01</b><span>Understand the idea</span><i>↗</i></div><div class="guide-row"><b>02</b><span>Try one small build</span><i>↗</i></div><div class="guide-row"><b>03</b><span>Share what you learn</span><i>↗</i></div><div class="guide-card-foot"><span>LEARN · MAKE · SHARE</span><span>MVJCE / INDIA</span></div></div><div class="guide-note"><span>01 / OPEN BY DESIGN</span><strong>Start anywhere.</strong></div><div class="guide-sticker" aria-hidden="true">↗</div></div>
+      <div class="visual server-visual" role="img" aria-label="Illustration of glowing cloud server racks connected by orange data pathways">
+        <svg class="server-art" viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="rack-face" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#394143"/><stop offset=".42" stop-color="#202629"/><stop offset="1" stop-color="#111619"/></linearGradient><linearGradient id="rack-side" x1="0" x2="1"><stop stop-color="#0c1114"/><stop offset="1" stop-color="#262d30"/></linearGradient><filter id="led-glow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="path-glow" x="-50%" y="-500%" width="200%" height="1100%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><g id="rack"><path class="rack-side" d="M0 15 18 6v316l-18 10z"/><path class="rack-top" d="m0 15 18-9 126 0-18 9z"/><rect class="rack-shell" x="0" y="15" width="126" height="316" rx="3"/><rect class="rack-panel" x="8" y="25" width="110" height="292" rx="2"/><g class="rack-slot"><rect x="14" y="36" width="98" height="34" rx="2"/><rect x="14" y="78" width="98" height="34" rx="2"/><rect x="14" y="120" width="98" height="34" rx="2"/><rect x="14" y="162" width="98" height="34" rx="2"/><rect x="14" y="204" width="98" height="34" rx="2"/><rect x="14" y="246" width="98" height="34" rx="2"/><rect x="14" y="288" width="98" height="20" rx="2"/></g><g class="rack-muted"><circle cx="27" cy="51" r="2"/><circle cx="27" cy="93" r="2"/><circle cx="27" cy="135" r="2"/><circle cx="27" cy="177" r="2"/><circle cx="27" cy="219" r="2"/><circle cx="27" cy="261" r="2"/><circle cx="27" cy="298" r="2"/></g><g class="rack-lights"><circle cx="99" cy="51" r="2"/><circle cx="106" cy="51" r="2"/><circle cx="99" cy="93" r="2"/><circle cx="106" cy="93" r="2"/><circle cx="99" cy="135" r="2"/><circle cx="106" cy="135" r="2"/><circle cx="99" cy="177" r="2"/><circle cx="106" cy="177" r="2"/><circle cx="99" cy="219" r="2"/><circle cx="106" cy="219" r="2"/><circle cx="99" cy="261" r="2"/><circle cx="106" cy="261" r="2"/></g></g></defs>
+          <path class="rack-floor" d="M0 427 355 389 760 434M83 500 355 389 645 500M355 389v111M0 463l355-74 405 76"/>
+          <path class="pathway-soft" d="M0 380h245v-42h160v-55h125v-50h132M74 422h188v-37h91v-46h120v-64h111v-52h90"/>
+          <path class="pathway pathway-flow" d="M0 380h245v-42h160v-55h125v-50h132M74 422h188v-37h91v-46h120v-64h111v-52h90"/>
+          <g opacity=".72" transform="translate(62 142) scale(.68)"><use href="#rack"/></g><g opacity=".8" transform="translate(158 118) scale(.78)"><use href="#rack"/></g><g opacity=".88" transform="translate(266 87) scale(.9)"><use href="#rack"/></g><g transform="translate(390 55) scale(1.08)"><use href="#rack"/></g><g opacity=".88" transform="translate(526 91) scale(.91)"><use href="#rack"/></g><g opacity=".78" transform="translate(634 127) scale(.78)"><use href="#rack"/></g>
+          <path class="pathway pathway-flow" d="M394 391v-94h62v-54h66"/>
+        </svg><div class="visual-caption"><i></i>Learn · build · share</div>
+      </div>
     </section>
     <div class="ticker"><div class="wrap ticker-in"><strong>Curiosity → capability</strong><span class="spark">✳</span><span>Cloud fundamentals</span><span class="spark">✳</span><span>Hands-on practice</span><span class="spark">✳</span><span>Community built</span></div></div>
     <section class="section light" id="about"><div class="wrap">
