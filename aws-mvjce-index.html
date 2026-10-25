@@ -201,9 +201,14 @@
     @keyframes console-pulse{50%{opacity:.45;box-shadow:0 0 4px var(--story-accent)}}@keyframes console-led{50%{opacity:.25;box-shadow:none}}@keyframes console-orbit{to{transform:rotate(338deg) scaleY(.65)}}@keyframes route-flow{to{stroke-dashoffset:-52}}
     @media(max-width:760px){.cloud-story{grid-template-columns:1fr;gap:0;margin-top:58px}.story-visual{grid-row:1;top:72px;z-index:4;padding:20px 0 8px}.story-console{padding:12px}.console-map{min-height:230px}.console-map:before{width:210px;height:120px}.console-map:after{width:170px;height:92px}.console-node{padding:7px 8px;font-size:7px}.console-node.n1{left:2%;top:19%}.console-node.n2{right:1%;top:23%}.console-node.n3{right:2%;bottom:11%}.console-node.n4{left:2%;bottom:10%}.story-step{min-height:56vh;padding:42px 0}.story-step h3{font-size:clamp(38px,10vw,54px)}.story-step p{font-size:14px}}
     @media(prefers-reduced-motion:reduce){.story-step,.story-console,.console-progress i,.console-node,.console-route{transition:none}.console-state i,.console-map:after,.console-unit:after,.story-console[data-mode="experiment"] .console-route,.story-console[data-mode="share"] .console-route{animation:none}}
+    .scroll-meter{position:fixed;inset:0 0 auto;height:3px;z-index:120;pointer-events:none;background:rgba(20,42,48,.08)}.scroll-meter span{display:block;width:100%;height:100%;transform:scaleX(var(--scroll-progress,0));transform-origin:left;background:linear-gradient(90deg,#ff9900,#ffd18a);box-shadow:0 0 12px #ff990066;transition:transform .12s linear}
+    .js-enabled .reveal:not(.visible){transform:translateY(34px) scale(.985)}.reveal{transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1)}
+    .story-step{opacity:.28;filter:blur(1px);transform:translateY(28px) scale(.985);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease}.story-step.is-active{opacity:1;filter:none;transform:none}
+    @media(prefers-reduced-motion:reduce){.scroll-meter span{transition:none}.js-enabled .reveal:not(.visible){transform:none}.story-step{opacity:1;filter:none;transform:none}}
   </style>
 </head>
 <body>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
   <div class="intro" id="boot-intro" role="dialog" aria-modal="true" aria-labelledby="boot-title">
     <div class="intro-content">
       <div class="intro-brand"><span class="brand-mark">A</span><span>AWS@MVJCE</span></div>
@@ -287,6 +292,21 @@
     const story=document.querySelector('.cloud-story');
     const storySteps=[...document.querySelectorAll('[data-story-step]')];
     const storyConsole=document.querySelector('.story-console');
+    const scrollMeter=document.querySelector('.scroll-meter');
+    let scrollMeterQueued=false;
+    const updateScrollMeter=()=>{
+      if(scrollMeterQueued)return;
+      scrollMeterQueued=true;
+      requestAnimationFrame(()=>{
+        const scrollableHeight=document.documentElement.scrollHeight-window.innerHeight;
+        const progress=scrollableHeight>0?window.scrollY/scrollableHeight:0;
+        scrollMeter?.style.setProperty('--scroll-progress',String(Math.max(0,Math.min(1,progress))));
+        scrollMeterQueued=false;
+      });
+    };
+    window.addEventListener('scroll',updateScrollMeter,{passive:true});
+    window.addEventListener('resize',updateScrollMeter);
+    updateScrollMeter();
     const updateStory=index=>{
       const step=storySteps[index];
       if(!step||!storyConsole)return;
@@ -297,7 +317,7 @@
       storyConsole.querySelector('[data-story-number]').textContent=String(index+1).padStart(2,'0');
       storyConsole.querySelector('[data-story-status]').textContent=['Signal ready','Testing pathway','Knowledge shared'][index];
     };
-    if(story&&'IntersectionObserver'in window){const storyObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)updateStory(Number(entry.target.dataset.storyStep))}),{rootMargin:'-38% 0px -38% 0px',threshold:0});storySteps.forEach(step=>storyObserver.observe(step))}
+    if(story&&'IntersectionObserver'in window){const storyObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)updateStory(Number(entry.target.dataset.storyStep))}),{rootMargin:'-42% 0px -42% 0px',threshold:0});storySteps.forEach(step=>storyObserver.observe(step))}
     if(document.documentElement.classList.contains('show-intro')){
       document.body.classList.add('intro-active');
       const skip=document.querySelector('#skip-intro');
