@@ -105,9 +105,10 @@
       const progress=document.querySelector('#boot-progress');
       const percent=document.querySelector('#boot-percent');
       const duration=2600,started=performance.now();let frame,introTimer;
-      const finishIntro=()=>{if(!document.documentElement.classList.contains('show-intro'))return;cancelAnimationFrame(frame);window.clearTimeout(introTimer);try{sessionStorage.setItem('aws-mvjce-booted','1')}catch{}document.documentElement.classList.remove('show-intro');document.body.classList.remove('intro-active');document.querySelectorAll('body > header,body > main,body > footer').forEach(element=>element.inert=false);intro.setAttribute('aria-hidden','true')};
+      const finishIntro=()=>{if(!document.documentElement.classList.contains('show-intro'))return;cancelAnimationFrame(frame);window.clearTimeout(introTimer);document.removeEventListener('keydown',handleIntroKey);try{sessionStorage.setItem('aws-mvjce-booted','1')}catch{}document.documentElement.classList.remove('show-intro');document.body.classList.remove('intro-active');document.querySelectorAll('body > header,body > main,body > footer').forEach(element=>element.inert=false);intro.setAttribute('aria-hidden','true')};
+      const handleIntroKey=event=>{if(event.key==='Escape')finishIntro()};
       const updateProgress=now=>{const value=Math.min(100,Math.round(((now-started)/duration)*100));progress.setAttribute('aria-valuenow',String(value));percent.textContent=value+'%';if(value<100)frame=requestAnimationFrame(updateProgress)};
-      document.querySelectorAll('body > header,body > main,body > footer').forEach(element=>element.inert=true);skip.addEventListener('click',finishIntro);document.addEventListener('keydown',event=>{if(event.key==='Escape')finishIntro()},{once:true});skip.focus({preventScroll:true});frame=requestAnimationFrame(updateProgress);introTimer=window.setTimeout(finishIntro,duration+100);
+      document.querySelectorAll('body > header,body > main,body > footer').forEach(element=>element.inert=true);skip.addEventListener('click',finishIntro);document.addEventListener('keydown',handleIntroKey);skip.focus({preventScroll:true});frame=requestAnimationFrame(updateProgress);introTimer=window.setTimeout(finishIntro,duration+100);
     }else if(intro){intro.setAttribute('aria-hidden','true')}
 
     toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');toggle.textContent=open?'×':'☰'});
