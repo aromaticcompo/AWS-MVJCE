@@ -60,6 +60,39 @@
     @media(prefers-reduced-motion:reduce){.show-intro .intro{display:none}.js-enabled .reveal:not(.visible){opacity:1;transform:none}.intro:after,.server-unit:after,.show-intro .boot-progress span,.data-pathways .pulse,.pillars.reveal.visible .pillar,.path.reveal.visible article{animation:none}.pillar,.path article,.skip-intro span{transition:none}.pillar:hover,.path article:hover{transform:none;box-shadow:none}}
   </style>
   <script>document.documentElement.classList.add('js-enabled');try{if(!sessionStorage.getItem('aws-mvjce-booted')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('show-intro')}catch{}</script>
+  <style>
+    /* Benefit-led landing page rhythm, shaped for AWS@MVJCE. */
+    .hero-copy>p{max-width:450px}
+    .hero-proof{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .hero-proof span{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#d3dadd;font:9px var(--mono);letter-spacing:.04em}
+    .hero-proof i{width:5px;height:5px;border-radius:50%;background:var(--orange);box-shadow:0 0 9px #ff990088}
+    .section.light#about{background:linear-gradient(180deg,#faf9f6 0%,#f0eee8 100%)}
+    .pillars{gap:14px;border:0}
+    .pillar,.pillar+.pillar{position:relative;overflow:hidden;padding:26px 23px 25px;min-height:258px;border:1px solid #deddd7;background:rgba(255,255,255,.74);box-shadow:0 14px 38px rgba(31,40,42,.045);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+    .pillar:after{content:"";position:absolute;right:-34px;top:-38px;width:112px;height:112px;border:1px solid rgba(255,153,0,.2);border-radius:50%;box-shadow:0 0 0 13px rgba(255,153,0,.035),0 0 0 27px rgba(255,153,0,.025);pointer-events:none}
+    .pillar:hover{transform:translateY(-5px);border-color:#e6b56d;box-shadow:0 20px 42px rgba(31,40,42,.09)}
+    .pillar .num{font-size:9px;letter-spacing:.12em;color:#7c8588}
+    .pillar-icon{display:grid;place-items:center;width:41px;height:41px;margin:28px 0 17px;border:1px solid #f0d5aa;border-radius:50%;background:#fff8ed;color:#c66b00;font-size:18px}
+    .pillar h3{font-size:19px}
+    .pillar p{font-size:12px;line-height:1.8}
+    .faq{padding:105px 0 112px;background:#f5f3ee;color:var(--ink)}
+    .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:82px;align-items:start}
+    .faq-intro{position:sticky;top:112px}
+    .faq-intro h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.075em;margin:17px 0}
+    .faq-intro h2 em{font-family:var(--serif);font-weight:400}
+    .faq-intro p{max-width:300px;color:#657078;font-size:13px}
+    .faq-list{border-top:1px solid #d0cfca}
+    .faq-list details{border-bottom:1px solid #d0cfca}
+    .faq-list summary{position:relative;list-style:none;cursor:pointer;padding:23px 42px 23px 0;font-size:15px;font-weight:700;letter-spacing:-.025em}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary:after{content:"+";position:absolute;right:3px;top:19px;display:grid;place-items:center;width:25px;height:25px;border:1px solid #c9c8c1;border-radius:50%;color:#a35b00;font:18px/1 var(--sans);transition:transform .22s ease,background .22s ease,color .22s ease}
+    .faq-list details[open] summary:after{transform:rotate(45deg);background:var(--orange);border-color:var(--orange);color:var(--ink)}
+    .faq-answer{padding:0 46px 22px 0;color:#657078;font-size:12px;line-height:1.85;max-width:520px}
+    .faq-list summary:focus-visible{outline:2px solid #b46a00;outline-offset:4px}
+    .join-panel{box-shadow:0 25px 70px rgba(0,0,0,.16)}
+    @media(max-width:760px){.hero-proof{gap:6px;margin-top:18px}.hero-proof span{font-size:8px;padding:7px 8px}.pillars{gap:10px}.pillar,.pillar+.pillar{min-height:0;padding:22px 19px}.pillar-icon{margin:18px 0 12px}.faq{padding:76px 0}.faq-layout{grid-template-columns:1fr;gap:30px}.faq-intro{position:static}.faq-intro h2{font-size:clamp(38px,11vw,54px)}.faq-list summary{padding:20px 38px 20px 0;font-size:14px}.faq-answer{padding-right:28px}}
+    @media(prefers-reduced-motion:reduce){.pillar,.faq-list summary:after{transition:none}.pillar:hover{transform:none}}
+  </style>
 </head>
 <body>
   <div class="intro" id="boot-intro" role="dialog" aria-modal="true" aria-labelledby="boot-title"><div class="intro-content"><div class="intro-brand"><span class="brand-mark">A</span><span>AWS@MVJCE</span></div><div class="server-rack" aria-hidden="true"><div class="server-stack"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-stack"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div><div class="server-stack"><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i><i class="server-unit"></i></div></div><p class="intro-kicker">01 / Server boot-up</p><h2 id="boot-title">Preparing your next build.</h2><div class="boot-status"><span>Establishing cloud pathways</span><span id="boot-percent">0%</span></div><div class="boot-progress" id="boot-progress" role="progressbar" aria-label="Loading the AWS@MVJCE homepage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div><button class="skip-intro" type="button" id="skip-intro">Skip intro <span aria-hidden="true">↗</span></button></div></div>
@@ -67,7 +100,7 @@
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="AWS at MVJCE home"><span class="brand-mark">A</span><span>AWS<span>@</span>MVJCE</span></a>
-      <nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#explore">Explore</a><a href="#approach">Our approach</a></nav>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#explore">Explore</a><a href="#approach">Our approach</a><a href="#faq">FAQ</a></nav>
       <a class="nav-cta" href="#connect">Find your next step <span class="arrow">↗</span></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
     </div>
@@ -80,6 +113,7 @@
         <p>Cloud is more than infrastructure. It’s a way to turn ideas into things people can use. Learn the foundations, build with others, and keep asking better questions.</p>
         <div class="hero-actions"><a class="button" href="#explore">Explore the community <span class="arrow">↓</span></a><a class="button ghost" href="https://aws.amazon.com/training/">Discover AWS learning <span class="arrow">↗</span></a></div>
         <div class="hero-note"><i></i> Curious minds. Practical learning. Shared progress.</div>
+        <div class="hero-proof" aria-label="What the community is about"><span><i></i>Student-led</span><span><i></i>Learn by doing</span><span><i></i>Share openly</span></div>
       </div>
       <div class="visual" aria-label="Abstract cloud system illustration" role="img"><svg class="data-pathways" viewBox="0 0 500 430" preserveAspectRatio="none" aria-hidden="true"><path class="route" d="M28 92 C122 92 143 146 219 157 S361 122 474 96"></path><path class="pulse" d="M28 92 C122 92 143 146 219 157 S361 122 474 96"></path><path class="route" d="M24 330 C120 304 146 255 225 254 S367 309 476 345"></path><path class="pulse second" d="M24 330 C120 304 146 255 225 254 S367 309 476 345"></path></svg><div class="orbit"><i class="orbit-dot"></i></div><div class="cloud-core"><div class="core-text"><span class="cloud-icon">⌁</span><strong>Cloud, connected.</strong><span>Ideas into systems</span></div></div><div class="node n1">Learn by doing</div><div class="node n2">Build together</div><div class="node n3">Think in systems</div><div class="node n4">Share what works</div><i class="trace t1"></i><i class="trace t2"></i><i class="trace t3"></i></div>
     </section>
@@ -92,7 +126,8 @@
       <div class="manifesto"><div class="section-head reveal"><div><div class="section-kicker"><span>02</span> / A builder’s mindset</div><h2>From first<br>question to<br><em>real confidence.</em></h2></div></div><div class="manifesto-copy reveal"><p><strong>You don’t need to know everything to begin.</strong> You need a good question, a safe place to experiment, and people who will share what they know.</p><p>That’s the spirit behind AWS@MVJCE: make ambitious technology approachable, and make learning something we do together.</p><div class="manifesto-stamp">Learn openly · Build thoughtfully · Leave a trail</div></div></div>
       <div class="path reveal" id="approach"><article><span>01 / ORIENT</span><h3>Find a starting point</h3><p>Explore the core ideas and choose a question worth following.</p></article><article><span>02 / LEARN</span><h3>Build your foundation</h3><p>Use guided learning to connect concepts to real services.</p></article><article><span>03 / MAKE</span><h3>Try something small</h3><p>Turn a concept into a simple experiment you can explain.</p></article><article><span>04 / SHARE</span><h3>Bring others along</h3><p>Document the learning and make room for a new perspective.</p></article></div>
     </div></section>
-    <section class="join" id="connect"><div class="wrap"><div class="join-panel reveal"><div class="join-copy"><div class="eyebrow">Your next step starts here</div><h2>Stay curious.<br>Make something real.</h2><p>Explore AWS learning resources and bring a question to the community.</p></div><a class="button" href="https://aws.amazon.com/training/">Start exploring AWS <span class="arrow">↗</span></a></div></div></section>
+  <section class="faq" id="faq"><div class="wrap faq-layout"><div class="faq-intro reveal"><div class="section-kicker"><span>03</span> / A few good questions</div><h2>Start where<br><em>you are.</em></h2><p>No cloud background required. Bring curiosity, follow a question, and take the next step at your pace.</p></div><div class="faq-list reveal"><details><summary>What is AWS@MVJCE?</summary><div class="faq-answer">A student-led community at MVJCE focused on exploring cloud technology through learning, building, and sharing.</div></details><details><summary>Do I need cloud experience before I start?</summary><div class="faq-answer">No. Begin with the fundamentals, ask questions as you go, and build your understanding one concept at a time.</div></details><details><summary>How can I start learning?</summary><div class="faq-answer">Explore the AWS training resources linked here, choose a topic that interests you, and try a small experiment you can explain.</div></details><details><summary>What does “building together” mean?</summary><div class="faq-answer">Learn in the open: share what you tried, document what worked, and make it easier for someone else to continue from there.</div></details></div></div></section>
+  <section class="join" id="connect"><div class="wrap"><div class="join-panel reveal"><div class="join-copy"><div class="eyebrow">Your next step starts here</div><h2>Stay curious.<br>Make something real.</h2><p>Explore AWS learning resources and bring a question to the community.</p></div><a class="button" href="https://aws.amazon.com/training/">Start exploring AWS <span class="arrow">↗</span></a></div></div></section>
   </main>
   <footer class="footer"><div class="wrap footer-in"><a class="brand" href="#home"><span class="brand-mark">A</span><span>AWS<span>@</span>MVJCE</span></a><span>Student community · MVJCE</span><a href="https://github.com/aromaticcompo/aws-mvjce">View this project on GitHub ↗</a></div></footer>
   <script>
