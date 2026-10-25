@@ -136,6 +136,18 @@ body{background:#080d12;color:#eff1ed;overflow:hidden}.reading-progress{display:
 @media(max-width:680px){.world-courier-status{bottom:137px;font-size:.56rem}}
 @media(max-height:620px){.world-courier-status{bottom:117px}}
 
+.robot-globe-trigger{position:absolute;z-index:40;transform:translate(-50%,-100%);width:42px;height:51px;border:1px solid transparent;border-radius:15px;background:transparent;cursor:pointer;pointer-events:auto}.robot-globe-trigger:hover,.robot-globe-trigger:focus-visible{border-color:#8ce4ed88;background:#8ce4ed09;box-shadow:0 0 24px #8ce4ed20}.robot-globe-trigger:after{content:"Ask Scout";position:absolute;white-space:nowrap;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);padding:4px 8px;background:#142530;color:#aeeef3;border:1px solid #8ce4ed30;border-radius:7px;font:.53rem ui-monospace,Consolas,monospace;opacity:0;pointer-events:none}.robot-globe-trigger:hover:after,.robot-globe-trigger:focus-visible:after{opacity:1}.robot-globe-trigger[hidden]{display:none!important}
+.world-companion-controls{position:absolute;z-index:6;left:24px;bottom:117px}.companion-launch{display:flex;align-items:center;gap:10px;background:#101c26e8;backdrop-filter:blur(14px);color:#e4e9e9;border:1px solid #80dce52e;border-radius:16px;padding:9px 12px;cursor:pointer;box-shadow:0 7px 25px #0003;transition:border-color .2s,transform .2s}.companion-launch:hover{border-color:#92e8ef88;transform:translateY(-2px)}.companion-launch svg{width:35px;height:35px}.companion-launch strong{display:block;font-size:.75rem;font-weight:600}.companion-launch small{display:block;color:#7e969f;font-size:.57rem;margin-top:1px}.companion-launch b{font-size:.8rem;font-weight:400;margin-left:7px;color:#91dce8}.scout-eyes{animation:scoutBlink 6s infinite;transform-origin:24px 18px}@keyframes scoutBlink{0%,46%,49%,100%{transform:scaleY(1)}47%,48%{transform:scaleY(.12)}}
+.motion-toggle{position:absolute;z-index:6;bottom:125px;right:25px;display:flex;align-items:center;gap:8px;border:1px solid #ffffff17;border-radius:999px;padding:8px 12px;background:#101b23db;backdrop-filter:blur(10px);color:#8c9da8;font-size:.62rem;cursor:pointer}.motion-toggle:hover{border-color:#ffb54760;color:#e6d3b4}.motion-toggle[aria-pressed="true"]{border-color:#92e8ef55;color:#a9e3e8}#motionSymbol{color:#d7bb8b;font-size:.8rem;line-height:1}
+.panel-scout{display:flex;align-items:center;gap:7px;margin-left:auto;border:1px solid #d9d5cb;border-radius:999px;background:#eeece5;color:#5a6668;padding:6px 10px;cursor:pointer;font-size:.63rem;white-space:nowrap}.panel-scout svg{width:20px;height:20px}.world-panel-head{gap:12px}
+.companion-panel{position:fixed;inset:auto 24px 110px auto;margin:0;padding:22px;width:min(400px,calc(100% - 36px));max-width:none;max-height:calc(100dvh - 150px);overflow:auto;border:1px solid #8ddde538;border-radius:23px;background:radial-gradient(ellipse at 90% 0%,#8be3ed0b,transparent 45%),#111c26;color:#e4e8e7;box-shadow:0 30px 100px #0009}.companion-panel::backdrop{background:#03091065;backdrop-filter:blur(3px)}.companion-panel[open]{animation:scoutPanelIn .25s ease-out}.companion-head{display:flex;align-items:center;gap:13px}.companion-avatar{width:53px;height:57px;display:grid;place-items:center;border:1px solid #8ddde521;border-radius:16px;background:#8ddde507;flex-shrink:0}.companion-avatar svg{width:40px;height:45px}.companion-head p{margin:0 0 3px;color:#7ca3ae;font:.49rem ui-monospace,Consolas,monospace;letter-spacing:.12em}.companion-head h2{margin:0;font-size:1.35rem;letter-spacing:-.035em;font-weight:570;color:#f0e8d9}.companion-close{width:29px;height:29px;margin-left:auto;align-self:flex-start;display:grid;place-items:center;border:1px solid #ffffff1b;border-radius:50%;background:#ffffff04;color:#a3b1b9;cursor:pointer;font-size:1rem}.companion-close:hover{color:#ffe1aa;border-color:#ffb54766}.companion-intro{margin:17px 0;color:#9aafb9;font-size:.81rem;line-height:1.7}.companion-questions{display:grid;gap:7px}.companion-questions button{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:11px 12px;border:1px solid #93dce51f;border-radius:11px;background:#172630;color:#c6dce1;font-size:.76rem;cursor:pointer;transition:background .2s,border-color .2s}.companion-questions button:hover,.companion-questions button[aria-pressed="true"]{background:#20333e;border-color:#93dce566}.companion-questions span{color:#89c8d2}
+.companion-answer{margin-top:17px;padding:17px;border:1px solid #ffb54726;border-radius:14px;background:#ffb54707}.companion-answer[hidden]{display:none!important}.scout-answer-label{font:.47rem ui-monospace,Consolas,monospace;letter-spacing:.11em;color:#b6a07e;margin:0 0 9px}.companion-answer h3{margin:0 0 9px;color:#f1dfc0;font-size:.94rem;line-height:1.3;letter-spacing:-.025em}.companion-answer p:not(.scout-answer-label){margin:0;color:#b2bdc1;font-size:.76rem;line-height:1.8}.scout-answer-action{margin-top:14px;padding:8px 11px;background:#ffbd65;border:0;border-radius:999px;color:#17212a;font-size:.69rem;font-weight:650;cursor:pointer}.companion-foot{display:flex;align-items:center;gap:7px;margin-top:17px;color:#5f7d89;font:.49rem ui-monospace,Consolas,monospace;line-height:1.6}.scout-ready-dot{width:4px;height:4px;background:#8ddde5;box-shadow:0 0 7px #8ddde5;border-radius:50%;flex-shrink:0}@keyframes scoutPanelIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{animation-play-state:paused!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+@media(max-width:680px){.world-companion-controls{left:14px;bottom:124px}.companion-launch{padding:7px;border-radius:14px}.companion-launch span,.companion-launch b{display:none}.companion-launch svg{width:29px;height:29px}.companion-launch:after{content:"Ask Scout";position:absolute;bottom:-17px;left:50%;transform:translateX(-50%);font-size:.5rem;color:#7f9aa5;white-space:nowrap}.motion-toggle{right:15px;bottom:132px;padding:9px}.motion-label{display:none}.companion-panel{inset:auto 12px 112px 12px;width:auto;max-height:calc(100dvh - 155px);padding:20px;border-radius:20px}.panel-scout span{display:none}.panel-scout{padding:5px}.world-courier-status{bottom:174px;font-size:.52rem;max-width:calc(100% - 100px)}}
+@media(max-height:620px){.world-companion-controls{bottom:99px}.motion-toggle{bottom:106px}.companion-panel{bottom:88px;max-height:calc(100dvh - 115px)}}
+@media(prefers-reduced-motion:reduce){.scout-eyes,.companion-panel[open]{animation:none}.companion-launch,.companion-questions button{transition:none}}
+
+body.motion-paused .world-panel[open],body.motion-paused .companion-panel[open],body.motion-paused .world-field{animation:none!important}
 </style>
 </head>
 <body class="intro-locked">
@@ -145,8 +157,9 @@ body{background:#080d12;color:#eff1ed;overflow:hidden}.reading-progress{display:
 <div class="entry-coord top">TRACE <b>/ 001</b><br>ORIGIN / —</div><div class="entry-coord bottom">CHANNEL / <b>OPEN</b><br>MVJCE / ↗</div>
 <div class="entry-inner"><div class="entry-mark" aria-hidden="true">✦</div><p class="entry-status" id="entryStatus" role="status">Unidentified transmission · 01</p><h1 class="entry-title" id="entryTitle">Data is the<br>ultimate <span>tool.</span></h1><p class="entry-copy" id="entryCopy">You found the edge.</p><button class="entry-enter" id="enterSite" type="button" aria-label="Enter the AWSSBG website" autofocus>Follow it <span aria-hidden="true">↗</span></button><p class="entry-foot">Some questions are doorways.</p></div></dialog>
 <header class="topbar" inert><div class="wrap topbar-inner"><a class="brand" href="#home" aria-label="AWSSBG home"><span class="brand-mark">✦</span><span class="brand-name">AWSSBG <small>MVJCE · STUDENT BUILDERS</small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="nav" id="nav" aria-label="Main navigation"><a href="#about">About</a><a href="#events">Events</a><a href="#projects">Projects</a><a href="#community">Community</a><button class="nav-cta" type="button" data-join-intent>I want in <span aria-hidden="true">↗</span></button></nav></div><div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div></header>
-<main class="world-main" inert><section class="world-stage" id="home" aria-label="Explore AWSSBG through the globe"><div class="world-intro"><p class="kicker">AWSSBG × MVJCE</p><h1 tabindex="-1">A world to<br><span>build together.</span></h1><p>Learn cloud. Build projects.<br>Find your people.</p></div><div class="world-field" tabindex="0" role="region" aria-label="Interactive network globe with orbiting satellites. Drag to rotate, or use left and right arrow keys. Choose a labelled point to explore."><canvas id="heroGlobe" aria-hidden="true"></canvas><div class="world-atmosphere" aria-hidden="true"></div><div class="world-hotspots"><button class="world-hotspot" type="button" data-world-destination="about" data-world-node="0" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>01 / EXPLORE</small>Start here</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="events" data-world-node="1" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>02 / EXPLORE</small>Events</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="projects" data-world-node="2" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>03 / EXPLORE</small>Projects</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="community" data-world-node="3" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>04 / EXPLORE</small>Community</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="join" data-world-node="4" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>05 / EXPLORE</small>Join us</span><b aria-hidden="true">↗</b></button></div></div><p class="world-courier-status" id="worldCourierStatus" role="status" aria-live="polite" hidden></p><div class="world-instructions"><span aria-hidden="true">↔</span> Drag to rotate · Select a point to explore</div><div class="world-dock" role="navigation" aria-label="Globe destinations"><button type="button" data-world-destination="about" aria-haspopup="dialog" aria-controls="worldPanel"><span>01</span>Start here</button><button type="button" data-world-destination="events" aria-haspopup="dialog" aria-controls="worldPanel"><span>02</span>Events</button><button type="button" data-world-destination="projects" aria-haspopup="dialog" aria-controls="worldPanel"><span>03</span>Projects</button><button type="button" data-world-destination="community" aria-haspopup="dialog" aria-controls="worldPanel"><span>04</span>Community</button><button type="button" data-world-destination="join" aria-haspopup="dialog" aria-controls="worldPanel"><span>05</span>Join us</button></div><p class="world-footnote">One campus. A world of possibilities.</p></section></main>
-<dialog class="world-panel" id="worldPanel" aria-labelledby="worldPanelTitle"><div class="world-panel-head"><div><p class="world-panel-coordinate" id="worldPanelCoordinate">NODE / 01</p><h2 id="worldPanelTitle" tabindex="-1">Start here</h2></div><button class="world-panel-close" id="closeWorldPanel" type="button" aria-label="Return to globe">×</button></div><nav class="world-panel-tabs" aria-label="Explore another globe destination"><button type="button" data-world-destination="about" aria-pressed="false">Start here</button><button type="button" data-world-destination="events" aria-pressed="false">Events</button><button type="button" data-world-destination="projects" aria-pressed="false">Projects</button><button type="button" data-world-destination="community" aria-pressed="false">Community</button><button type="button" data-world-destination="join" aria-pressed="false">Join us</button></nav><div class="world-panel-content"><section hidden data-world-section="about" class="content" id="about"><div class="wrap"><div class="section-head"><div><p class="kicker">01 / Start here</p><h2>Learn cloud. Build together.</h2></div><p class="sub">AWSSBG is the AWS Student Builder Group at MVJCE. We learn cloud fundamentals, run hands-on sessions, and explore ideas through projects.</p></div><div class="cards"><article class="card"><div class="card-icon">⌘</div><h3>Learn</h3><p>Start with AWS and cloud fundamentals. Bring your questions to a workshop.</p></article><article class="card"><div class="card-icon">↗</div><h3>Build</h3><p>Try new tools and turn an idea into something you can demonstrate.</p></article><article class="card"><div class="card-icon">◎</div><h3>Connect</h3><p>Meet other students who want to learn and build alongside you.</p></article></div><div class="about-band"><div><strong>You can start from zero.</strong><p>No cloud experience is needed. Curiosity is enough for your first session.</p></div><div><strong>Find your next step.</strong><p>Explore the events node, look through project directions, or visit Join.</p></div></div></div></section><section hidden data-world-section="events" class="content" id="events"><div class="wrap"><div class="section-head"><div><p class="kicker">02 / Signal log</p><h2>When the network wakes.</h2></div><p class="sub">Some things happen offline. The next signal is listed here.</p></div><div class="event-toolbar"><div class="filters" id="filters" aria-label="Filter events"></div><span class="event-count" id="eventCount" aria-live="polite"></span></div><div class="event-grid" id="eventGrid"></div></div></section><section hidden data-world-section="projects" class="content" id="projects"><div class="wrap"><div class="section-head"><div><p class="kicker">03 / Artifacts</p><h2>Proof a question can become a thing.</h2></div><p class="sub">Explore a few directions teams can take. Project details and links can be added as your community’s work takes shape.</p></div><div class="project-grid" id="projectGrid"></div></div></section><section hidden data-world-section="community" class="content" id="community"><div class="wrap"><div class="section-head"><div><p class="kicker">04 / Community</p><h2>Find your people.</h2></div><p class="sub">A student community at MVJCE for asking questions, sharing what you learn, and building together.</p></div><div class="cards"><article class="card"><div class="card-icon">☁</div><h3>New to cloud?</h3><p>Come to an introductory session. You do not need to know the tools before you arrive.</p></article><article class="card"><div class="card-icon">⌘</div><h3>Already building?</h3><p>Bring an idea, show what you have made, and learn from another perspective.</p></article><article class="card"><div class="card-icon">◎</div><h3>Have a question?</h3><p>Start a conversation at a session. Learning together is part of the point.</p></article></div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="#events">Explore sessions ↗</a><a class="btn btn-ghost" href="#join">How to join ↗</a></div></div></section><section hidden data-world-section="join" class="wrap join-wrap" id="join"><div class="join-panel"><div class="inner"><p class="kicker">Your next step</p><h2>What is AWSSBG?</h2><p>AWSSBG (AWS Student Builder Group) is a student community at MVJCE. We learn AWS and cloud fundamentals, attend sessions, and build projects together. No cloud experience is needed.</p><a class="btn btn-primary" id="joinButton" href="#events">Find your first session <span aria-hidden="true">↗</span></a><div class="join-foot">Start with an event. Meet the people. Find your next build.</div></div></div></section></div><div class="world-panel-bottom"><button type="button" data-world-return>← Return to globe</button><span>AWSSBG / MVJCE</span></div></dialog>
+<main class="world-main" inert><section class="world-stage" id="home" aria-label="Explore AWSSBG through the globe"><div class="world-intro"><p class="kicker">AWSSBG × MVJCE</p><h1 tabindex="-1">A world to<br><span>build together.</span></h1><p>Learn cloud. Build projects.<br>Find your people.</p></div><div class="world-field" tabindex="0" role="region" aria-label="Interactive network globe with orbiting satellites. Drag to rotate, or use left and right arrow keys. Choose a labelled point to explore."><canvas id="heroGlobe" aria-hidden="true"></canvas><div class="world-atmosphere" aria-hidden="true"></div><div class="world-hotspots"><button class="world-hotspot" type="button" data-world-destination="about" data-world-node="0" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>01 / EXPLORE</small>Start here</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="events" data-world-node="1" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>02 / EXPLORE</small>Events</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="projects" data-world-node="2" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>03 / EXPLORE</small>Projects</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="community" data-world-node="3" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>04 / EXPLORE</small>Community</span><b aria-hidden="true">↗</b></button><button class="world-hotspot" type="button" data-world-destination="join" data-world-node="4" aria-haspopup="dialog" aria-controls="worldPanel"><i aria-hidden="true"></i><span><small>05 / EXPLORE</small>Join us</span><b aria-hidden="true">↗</b></button></div><button class="robot-globe-trigger" id="robotGlobeTrigger" type="button" data-open-companion aria-label="Ask Scout, your robot guide" aria-haspopup="dialog" aria-controls="companionPanel" hidden></button></div><p class="world-courier-status" id="worldCourierStatus" role="status" aria-live="polite" hidden></p><div class="world-instructions"><span aria-hidden="true">↔</span> Drag to rotate · Select a point to explore</div><div class="world-dock" role="navigation" aria-label="Globe destinations"><button type="button" data-world-destination="about" aria-haspopup="dialog" aria-controls="worldPanel"><span>01</span>Start here</button><button type="button" data-world-destination="events" aria-haspopup="dialog" aria-controls="worldPanel"><span>02</span>Events</button><button type="button" data-world-destination="projects" aria-haspopup="dialog" aria-controls="worldPanel"><span>03</span>Projects</button><button type="button" data-world-destination="community" aria-haspopup="dialog" aria-controls="worldPanel"><span>04</span>Community</button><button type="button" data-world-destination="join" aria-haspopup="dialog" aria-controls="worldPanel"><span>05</span>Join us</button></div><div class="world-companion-controls"><button class="companion-launch" id="openCompanion" type="button" aria-label="Ask Scout, your club guide" data-open-companion aria-haspopup="dialog" aria-controls="companionPanel"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7V3" stroke="#edcf98" stroke-width="2"/><circle cx="24" cy="3" r="2" fill="#8ae6ef"/><rect x="9" y="8" width="30" height="20" rx="7" fill="#e6d4ae" stroke="#ffe5af"/><rect x="13" y="13" width="22" height="10" rx="4" fill="#142d37"/><g class="scout-eyes" fill="#94eff4"><rect x="17" y="16" width="4" height="4" rx="1"/><rect x="27" y="16" width="4" height="4" rx="1"/></g><rect x="16" y="31" width="16" height="10" rx="4" fill="#c8b48b"/><path d="M12 33L7 38M36 33L41 27M20 41V46M28 41V46" stroke="#e7d3aa" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="35" r="2" fill="#8ae6ef"/></svg><span><strong>Ask Scout</strong><small>Your club guide</small></span><b aria-hidden="true">↗</b></button></div><button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" aria-label="Pause motion"><span id="motionSymbol" aria-hidden="true">Ⅱ</span><span class="motion-label" id="motionLabel">Pause motion</span></button><p class="world-footnote">One campus. A world of possibilities.</p></section></main>
+<dialog class="world-panel" id="worldPanel" aria-labelledby="worldPanelTitle"><div class="world-panel-head"><div><p class="world-panel-coordinate" id="worldPanelCoordinate">NODE / 01</p><h2 id="worldPanelTitle" tabindex="-1">Start here</h2></div><button type="button" class="panel-scout" aria-label="Ask Scout, your club guide" data-open-companion aria-haspopup="dialog" aria-controls="companionPanel"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7V3" stroke="#edcf98" stroke-width="2"/><circle cx="24" cy="3" r="2" fill="#8ae6ef"/><rect x="9" y="8" width="30" height="20" rx="7" fill="#e6d4ae" stroke="#ffe5af"/><rect x="13" y="13" width="22" height="10" rx="4" fill="#142d37"/><g class="scout-eyes" fill="#94eff4"><rect x="17" y="16" width="4" height="4" rx="1"/><rect x="27" y="16" width="4" height="4" rx="1"/></g><rect x="16" y="31" width="16" height="10" rx="4" fill="#c8b48b"/><path d="M12 33L7 38M36 33L41 27M20 41V46M28 41V46" stroke="#e7d3aa" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="35" r="2" fill="#8ae6ef"/></svg><span>Ask Scout</span></button><button class="world-panel-close" id="closeWorldPanel" type="button" aria-label="Return to globe">×</button></div><nav class="world-panel-tabs" aria-label="Explore another globe destination"><button type="button" data-world-destination="about" aria-pressed="false">Start here</button><button type="button" data-world-destination="events" aria-pressed="false">Events</button><button type="button" data-world-destination="projects" aria-pressed="false">Projects</button><button type="button" data-world-destination="community" aria-pressed="false">Community</button><button type="button" data-world-destination="join" aria-pressed="false">Join us</button></nav><div class="world-panel-content"><section hidden data-world-section="about" class="content" id="about"><div class="wrap"><div class="section-head"><div><p class="kicker">01 / Start here</p><h2>Learn cloud. Build together.</h2></div><p class="sub">AWSSBG is the AWS Student Builder Group at MVJCE. We learn cloud fundamentals, run hands-on sessions, and explore ideas through projects.</p></div><div class="cards"><article class="card"><div class="card-icon">⌘</div><h3>Learn</h3><p>Start with AWS and cloud fundamentals. Bring your questions to a workshop.</p></article><article class="card"><div class="card-icon">↗</div><h3>Build</h3><p>Try new tools and turn an idea into something you can demonstrate.</p></article><article class="card"><div class="card-icon">◎</div><h3>Connect</h3><p>Meet other students who want to learn and build alongside you.</p></article></div><div class="about-band"><div><strong>You can start from zero.</strong><p>No cloud experience is needed. Curiosity is enough for your first session.</p></div><div><strong>Find your next step.</strong><p>Explore the events node, look through project directions, or visit Join.</p></div></div></div></section><section hidden data-world-section="events" class="content" id="events"><div class="wrap"><div class="section-head"><div><p class="kicker">02 / Signal log</p><h2>When the network wakes.</h2></div><p class="sub">Some things happen offline. The next signal is listed here.</p></div><div class="event-toolbar"><div class="filters" id="filters" aria-label="Filter events"></div><span class="event-count" id="eventCount" aria-live="polite"></span></div><div class="event-grid" id="eventGrid"></div></div></section><section hidden data-world-section="projects" class="content" id="projects"><div class="wrap"><div class="section-head"><div><p class="kicker">03 / Artifacts</p><h2>Proof a question can become a thing.</h2></div><p class="sub">Explore a few directions teams can take. Project details and links can be added as your community’s work takes shape.</p></div><div class="project-grid" id="projectGrid"></div></div></section><section hidden data-world-section="community" class="content" id="community"><div class="wrap"><div class="section-head"><div><p class="kicker">04 / Community</p><h2>Find your people.</h2></div><p class="sub">A student community at MVJCE for asking questions, sharing what you learn, and building together.</p></div><div class="cards"><article class="card"><div class="card-icon">☁</div><h3>New to cloud?</h3><p>Come to an introductory session. You do not need to know the tools before you arrive.</p></article><article class="card"><div class="card-icon">⌘</div><h3>Already building?</h3><p>Bring an idea, show what you have made, and learn from another perspective.</p></article><article class="card"><div class="card-icon">◎</div><h3>Have a question?</h3><p>Start a conversation at a session. Learning together is part of the point.</p></article></div><div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="#events">Explore sessions ↗</a><a class="btn btn-ghost" href="#join">How to join ↗</a></div></div></section><section hidden data-world-section="join" class="wrap join-wrap" id="join"><div class="join-panel"><div class="inner"><p class="kicker">Your next step</p><h2>What is AWSSBG?</h2><p>AWSSBG (AWS Student Builder Group) is a student community at MVJCE. We learn AWS and cloud fundamentals, attend sessions, and build projects together. No cloud experience is needed.</p><a class="btn btn-primary" id="joinButton" href="#events">Find your first session <span aria-hidden="true">↗</span></a><div class="join-foot">Start with an event. Meet the people. Find your next build.</div></div></div></section></div><div class="world-panel-bottom"><button type="button" data-world-return>← Return to globe</button><span>AWSSBG / MVJCE</span></div></dialog>
+<dialog class="companion-panel" id="companionPanel" aria-labelledby="companionTitle"><div class="companion-head"><div class="companion-avatar"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7V3" stroke="#edcf98" stroke-width="2"/><circle cx="24" cy="3" r="2" fill="#8ae6ef"/><rect x="9" y="8" width="30" height="20" rx="7" fill="#e6d4ae" stroke="#ffe5af"/><rect x="13" y="13" width="22" height="10" rx="4" fill="#142d37"/><g class="scout-eyes" fill="#94eff4"><rect x="17" y="16" width="4" height="4" rx="1"/><rect x="27" y="16" width="4" height="4" rx="1"/></g><rect x="16" y="31" width="16" height="10" rx="4" fill="#c8b48b"/><path d="M12 33L7 38M36 33L41 27M20 41V46M28 41V46" stroke="#e7d3aa" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="35" r="2" fill="#8ae6ef"/></svg></div><div><p>YOUR GLOBE COMPANION</p><h2 id="companionTitle">Meet Scout.</h2></div><button class="companion-close" id="closeCompanion" type="button" aria-label="Close Scout">×</button></div><p class="companion-intro">A little guide to a world of possibilities. Pick a question and I’ll help you find your next step.</p><div class="companion-questions" aria-label="Questions about the club"><button type="button" data-scout-question="club">What does this club do? <span aria-hidden="true">↗</span></button><button type="button" data-scout-question="beginner">Can beginners join? <span aria-hidden="true">↗</span></button><button type="button" data-scout-question="build">What can I build? <span aria-hidden="true">↗</span></button></div><div class="companion-answer" id="companionAnswer" role="status" aria-live="polite" aria-atomic="true" hidden><p class="scout-answer-label">SCOUT / YOUR NEXT STEP</p><h3 id="scoutAnswerTitle"></h3><p id="scoutAnswerCopy"></p><button class="scout-answer-action" id="scoutAnswerAction" type="button">Explore ↗</button></div><div class="companion-foot"><span class="scout-ready-dot" aria-hidden="true"></span> A question is a good place to start.</div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 // Update these sample items and add your registration URL when ready.
@@ -184,6 +197,9 @@ const entryGate=document.querySelector('#entryGate');
 const enterSite=document.querySelector('#enterSite');
 const entryStatus=document.querySelector('#entryStatus');
 const entryReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let motionPaused=entryReduced,motionPauseAt=entryReduced?performance.now():0,motionOffset=0;
+function sceneTime(){return (motionPaused?motionPauseAt:performance.now())-motionOffset;}
+
 let entryStarted=false;
 
 // Project a rotating sphere directly: no downloaded textures or 3D dependency.
@@ -201,6 +217,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
   return [Math.cos(a)*Math.sin(b),Math.sin(a),Math.cos(a)*Math.cos(b)];
  };
  const nodeVectors=globeNodes.map(n=>spherePoint(...n));
+ const robotTrigger=isIntro?null:document.querySelector('#robotGlobeTrigger');
  let robotVector=nodeVectors[0].slice(),robotJourney=null,robotArrivalAt=0;
  function updateRobot(now){
   if(isIntro||!robotJourney)return;
@@ -211,6 +228,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
   globeTarget=globeTurn+Math.atan2(Math.sin(yaw-globeTurn),Math.cos(yaw-globeTurn));
   if(t===1){robotJourney=null;robotArrivalAt=now;}
  }
+
  function paintRobot(now){
   if(isIntro)return;
   const ctx=globeContext,moving=!!robotJourney;
@@ -224,29 +242,33 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
    }
    ctx.strokeStyle='#90dce8b3';ctx.lineWidth=1.5;ctx.setLineDash([3,5]);ctx.shadowColor='#8fdce7';ctx.shadowBlur=5;ctx.stroke();ctx.restore();
   }
-  const p=projectGlobe(robotVector,1.045);if(p.z<-.04)return;
-  const scale=Math.max(.85,Math.min(1.2,globeSize/660));
+  const p=projectGlobe(robotVector,1.045),scale=Math.max(.85,Math.min(1.2,globeSize/660));
+  if(robotTrigger){robotTrigger.hidden=p.z<.08||moving;robotTrigger.style.left=(p.x/globeSize*100)+'%';robotTrigger.style.top=(p.y/globeSize*100)+'%';}
+  if(p.z<-.04)return;
+  const sinceArrival=now-robotArrivalAt,waving=!motionPaused&&!moving&&robotArrivalAt>0&&sinceArrival<1700;
   const step=moving?Math.sin(now*.025):0,bob=moving?Math.abs(step)*1.8:0;
+  const watching=projectGlobe(satelliteVector(satellites[0],satellites[0].phase+(now*.0002*satellites[0].speed)),satellites[0].radius);
+  const gaze=moving?0:Math.max(-1.3,Math.min(1.3,(watching.x-p.x)/180));
   ctx.save();ctx.translate(p.x,p.y);ctx.scale(scale,scale);
-  // Surface shadow, springy feet, little metallic body, and a cyan visor.
-  ctx.beginPath();ctx.ellipse(0,2,10,3,0,0,Math.PI*2);ctx.fillStyle='#0007';ctx.fill();
-  ctx.translate(0,-bob);
-  ctx.strokeStyle='#d5c49e';ctx.lineWidth=2.2;ctx.lineCap='round';
-  ctx.beginPath();ctx.moveTo(-4,-7);ctx.lineTo(-5+step*2,0);ctx.moveTo(4,-7);ctx.lineTo(5-step*2,0);ctx.stroke();
+  ctx.beginPath();ctx.ellipse(0,2,10,3,0,0,Math.PI*2);ctx.fillStyle='#0007';ctx.fill();ctx.translate(0,-bob);
+  ctx.strokeStyle='#d5c49e';ctx.lineWidth=2.2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-4,-7);ctx.lineTo(-5+step*2,0);ctx.moveTo(4,-7);ctx.lineTo(5-step*2,0);ctx.stroke();
   ctx.fillStyle='#ffcb7b';ctx.fillRect(-8+step*2,-1,6,3);ctx.fillRect(2-step*2,-1,6,3);
   ctx.fillStyle='#e4d4b1';ctx.strokeStyle='#ffcc80';ctx.lineWidth=.8;ctx.fillRect(-6,-19,12,12);ctx.strokeRect(-6,-19,12,12);
   ctx.fillStyle='#5bc8db';ctx.shadowColor='#83e1ec';ctx.shadowBlur=6;ctx.fillRect(-2,-15,4,3);ctx.shadowBlur=0;
-  ctx.strokeStyle='#d6c098';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-7,-17);ctx.lineTo(-11,-12+step*2);ctx.moveTo(7,-17);ctx.lineTo(11,-12-step*2);ctx.stroke();
-  ctx.fillStyle='#e9dbbd';ctx.strokeStyle='#ffe7b5';ctx.lineWidth=.8;ctx.fillRect(-10,-33,20,13);ctx.strokeRect(-10,-33,20,13);
-  ctx.fillStyle='#142c37';ctx.fillRect(-7,-30,14,7);
-  ctx.fillStyle='#91f0fa';ctx.shadowColor='#7ce1ed';ctx.shadowBlur=5;ctx.fillRect(-5,-28,3,2);ctx.fillRect(2,-28,3,2);ctx.shadowBlur=0;
-  ctx.strokeStyle='#e6ce9b';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,-33);ctx.lineTo(0,-38);ctx.stroke();
-  ctx.beginPath();ctx.arc(0,-39,1.8,0,Math.PI*2);ctx.fillStyle='#9ee9ee';ctx.shadowColor='#8ee5f2';ctx.shadowBlur=9;ctx.fill();ctx.shadowBlur=0;
-  const arrival=(now-robotArrivalAt)/650;
-  if(!entryReduced&&robotArrivalAt&&arrival<1){ctx.beginPath();ctx.ellipse(0,2,9+arrival*16,3+arrival*5,0,0,Math.PI*2);ctx.strokeStyle=`rgba(145,232,240,${1-arrival})`;ctx.lineWidth=1;ctx.stroke();}
+  ctx.strokeStyle='#d6c098';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-7,-17);ctx.lineTo(-11,-12+step*2);ctx.moveTo(7,-17);
+  if(waving){ctx.lineTo(11,-24);ctx.lineTo(15+Math.sin(sinceArrival*.018)*3,-30);}else ctx.lineTo(11,-12-step*2);ctx.stroke();
+  ctx.save();ctx.translate(0,-26.5);ctx.rotate(moving?step*.035:(motionPaused?0:Math.sin(now*.0012)*.08));
+  ctx.fillStyle='#e9dbbd';ctx.strokeStyle='#ffe7b5';ctx.lineWidth=.8;ctx.fillRect(-10,-6.5,20,13);ctx.strokeRect(-10,-6.5,20,13);
+  ctx.fillStyle='#142c37';ctx.fillRect(-7,-3.5,14,7);
+  const blink=!motionPaused&&now%5900<130;
+  ctx.fillStyle='#91f0fa';ctx.shadowColor='#7ce1ed';ctx.shadowBlur=5;
+  ctx.fillRect(-5+gaze,-1.5,3,blink ? .6 : 2);ctx.fillRect(2+gaze,-1.5,3,blink ? .6 : 2);ctx.shadowBlur=0;
+  ctx.strokeStyle='#e6ce9b';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,-6.5);ctx.lineTo(0,-11.5);ctx.stroke();
+  ctx.beginPath();ctx.arc(0,-12.5,1.8,0,Math.PI*2);ctx.fillStyle='#9ee9ee';ctx.shadowColor='#8ee5f2';ctx.shadowBlur=9;ctx.fill();ctx.restore();
+  const arrival=sinceArrival/650;
+  if(!motionPaused&&robotArrivalAt&&arrival<1){ctx.beginPath();ctx.ellipse(0,2,9+arrival*16,3+arrival*5,0,0,Math.PI*2);ctx.strokeStyle=`rgba(145,232,240,${1-arrival})`;ctx.lineWidth=1;ctx.stroke();}
   ctx.restore();
  }
-
  const satellites=[
   {inclination:.45,node:.2,phase:.7,speed:1,radius:1.17},
   {inclination:1.02,node:2.1,phase:3.5,speed:.78,radius:1.14},
@@ -262,7 +284,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
   // The far half of each orbit disappears behind the globe's silhouette.
   if(!front){ctx.beginPath();ctx.rect(0,0,globeSize,globeSize);ctx.arc(c,c,r,0,Math.PI*2);ctx.clip('evenodd');}
   satellites.forEach((orbit,index)=>{
-   const phase=orbit.phase+(entryReduced?0:now*.0002*orbit.speed);
+   const phase=orbit.phase+(now*.0002*orbit.speed);
    ctx.save();ctx.globalAlpha=(isIntro ? .65 : 1)*(front?1:.48);
    ctx.beginPath();
    for(let step=0;step<=120;step++){
@@ -291,7 +313,7 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
    }
    ctx.fillStyle='#e4cd9e';ctx.strokeStyle='#fff0cf';ctx.lineWidth=.8;ctx.fillRect(-4,-5,8,10);ctx.strokeRect(-4,-5,8,10);
    ctx.beginPath();ctx.moveTo(0,-5);ctx.lineTo(0,-10);ctx.moveTo(-3,-10);ctx.quadraticCurveTo(0,-6,3,-10);ctx.stroke();
-   ctx.beginPath();ctx.arc(0,-11,1.6,0,Math.PI*2);ctx.fillStyle='#fff2c8';ctx.shadowColor='#ffb547';ctx.shadowBlur=9+(entryReduced?0:Math.sin(now*.004+index)*4);ctx.fill();ctx.shadowBlur=0;
+   ctx.beginPath();ctx.arc(0,-11,1.6,0,Math.PI*2);ctx.fillStyle='#fff2c8';ctx.shadowColor='#ffb547';ctx.shadowBlur=9+(motionPaused?0:Math.sin(now*.004+index)*4);ctx.fill();ctx.shadowBlur=0;
    ctx.restore();
   });
   ctx.restore();
@@ -323,11 +345,12 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
  for(let lat=-60;lat<=60;lat+=20){const line=[];for(let lon=0;lon<=360;lon+=5)line.push(spherePoint(lat,lon));gridLines.push(line);}
  for(let lon=0;lon<180;lon+=20){const line=[];for(let t=0;t<=360;t+=5){const a=t*Math.PI/180,b=lon*Math.PI/180;line.push([Math.cos(a)*Math.sin(b),Math.sin(a),Math.cos(a)*Math.cos(b)]);}gridLines.push(line);}
  function drawGlobe(now){
+  now=(motionPaused?motionPauseAt:now)-motionOffset;
   globeFrame=0;
   if((isIntro&&!entryGate.open)||(!isIntro&&(entryGate.open||!globeVisible))||document.hidden)return;
   const delta=globeLast?Math.min(now-globeLast,60):0;globeLast=now;
   updateRobot(now);
-  if(!entryReduced){
+  if(!motionPaused){
    if(globeTarget!==null)globeTurn+=(globeTarget-globeTurn)*.085;
    else if(!globeDrag)globeTurn+=delta*(isIntro&&entryStarted ? .00085 : .00008);
    if(!isIntro){globeTurn+=(scrollY-lastGlobeScroll)*.00065;lastGlobeScroll=scrollY;}
@@ -360,14 +383,14 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
    ctx.beginPath();
    for(let i=0;i<=48;i++){const t=i/48,p=projectGlobe(globeArc(a,b,t),1+Math.sin(t*Math.PI)*.13);if(p.z>-.03){if(i===0)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y);}else ctx.moveTo(p.x,p.y);}
    ctx.strokeStyle='rgba(255,179,77,.38)';ctx.lineWidth=1;ctx.stroke();
-   const phase=entryReduced ? .35 :((now/(isIntro&&entryStarted?1650:4500)+linkIndex*.23)%1);
+   const phase=((now/(isIntro&&entryStarted?1650:4500)+linkIndex*.23)%1);
    for(let tail=8;tail>=0;tail--){const t=phase-tail*.012;if(t<0)continue;const p=projectGlobe(globeArc(a,b,t),1+Math.sin(t*Math.PI)*.13);if(p.z<0)continue;ctx.beginPath();ctx.arc(p.x,p.y,tail===0?2.5:1.3,0,Math.PI*2);ctx.fillStyle=`rgba(255,225,174,${(1-tail/9)*.95})`;ctx.shadowColor='#ffb547';ctx.shadowBlur=tail===0?12:3;ctx.fill();}
    ctx.shadowBlur=0;
   });
   nodeVectors.forEach(v=>{const p=projectGlobe(v);if(p.z<0)return;ctx.beginPath();ctx.arc(p.x,p.y,2.8,0,Math.PI*2);ctx.fillStyle='#ffe1a8';ctx.shadowColor='#ffb547';ctx.shadowBlur=10;ctx.fill();ctx.shadowBlur=0;ctx.beginPath();ctx.arc(p.x,p.y,7,0,Math.PI*2);ctx.strokeStyle='#ffb54755';ctx.stroke();});
   paintSatellites(now,true);
   paintRobot(now);
-  if(!entryReduced)globeFrame=requestAnimationFrame(drawGlobe);
+  if(!motionPaused)globeFrame=requestAnimationFrame(drawGlobe);
  }
  function startGlobe(){if(!globeFrame){globeLast=0;lastGlobeScroll=scrollY;globeFrame=requestAnimationFrame(drawGlobe);}}
  if(!isIntro){
@@ -386,15 +409,15 @@ function createNetworkGlobe(globeCanvas,isIntro=false){
  return {travelTo:index=>{
   const destination=nodeVectors[index];
   const distance=Math.acos(Math.max(-1,Math.min(1,robotVector.reduce((sum,v,i)=>sum+v*destination[i],0))));
-  if(entryReduced||distance<.025){robotVector=destination.slice();robotJourney=null;robotArrivalAt=performance.now();startGlobe();return 0;}
+  if(motionPaused||distance<.025){robotVector=destination.slice();robotJourney=null;robotArrivalAt=sceneTime();startGlobe();return 0;}
   const duration=Math.round(850+Math.min(distance/Math.PI,1)*450);
-  robotJourney={from:robotVector.slice(),to:destination.slice(),started:performance.now(),duration};
+  robotJourney={from:robotVector.slice(),to:destination.slice(),started:sceneTime(),duration};
   startGlobe();return duration+50;
  },cancelJourney:()=>{robotJourney=null;},start:startGlobe,angle:()=>globeTurn,setAngle:value=>{globeTurn=value;},resume:()=>{globeTarget=null;startGlobe();},focusNode:index=>{
   const target=-globeNodes[index][1]*Math.PI/180;
   const turn=Math.atan2(Math.sin(target-globeTurn),Math.cos(target-globeTurn));
   globeTarget=globeTurn+turn;
-  if(entryReduced)globeTurn=globeTarget;
+  if(motionPaused)globeTurn=globeTarget;
   startGlobe();
  }};
 }
@@ -433,14 +456,14 @@ enterSite.addEventListener('click',()=>{
   document.querySelector('#home h1').focus({preventScroll:true});
   if(worldDestinations[location.hash.slice(1)])openWorld(location.hash.slice(1));
  };
- if(entryReduced)revealSite();else setTimeout(revealSite,2730);
+ if(entryReduced||motionPaused)revealSite();else setTimeout(revealSite,2730);
 });
 const toast=document.querySelector('#toast');let toastTimer;
 const worldPanel=document.querySelector('#worldPanel');
 const worldDestinations={about:{label:'Start here',node:0},events:{label:'Events',node:1},projects:{label:'Projects',node:2},community:{label:'Community',node:3},join:{label:'Join us',node:4}};
 
 const courierStatus=document.querySelector('#worldCourierStatus');
-let worldNavigationTimer=0;
+let worldNavigationTimer=0,pendingWorldDestination=null;
 function openWorld(key){
  const destination=worldDestinations[key];if(!destination||entryGate.open)return;
  clearTimeout(worldNavigationTimer);
@@ -448,6 +471,7 @@ function openWorld(key){
  heroNetwork.focusNode(destination.node);
  document.querySelectorAll('[data-world-destination]').forEach(button=>{const active=button.dataset.worldDestination===key;button.classList.toggle('is-active',active);if(button.closest('.world-panel-tabs'))button.setAttribute('aria-pressed',String(active));});
  const showDestination=()=>{
+  pendingWorldDestination=null;
   courierStatus.hidden=true;
   document.querySelectorAll('[data-world-section]').forEach(section=>section.hidden=section.dataset.worldSection!==key);
   document.querySelector('#worldPanelTitle').textContent=destination.label;
@@ -461,10 +485,11 @@ function openWorld(key){
  if(worldPanel.open||travelTime===0){showDestination();}
  else{
   courierStatus.textContent='On the way to '+destination.label+'…';courierStatus.hidden=false;
+  pendingWorldDestination=key;
   worldNavigationTimer=setTimeout(showDestination,travelTime);
  }
 }
-function returnToWorld(){clearTimeout(worldNavigationTimer);courierStatus.hidden=true;heroNetwork.cancelJourney();if(worldPanel.open)worldPanel.close();else heroNetwork.resume();}
+function returnToWorld(){clearTimeout(worldNavigationTimer);pendingWorldDestination=null;courierStatus.hidden=true;heroNetwork.cancelJourney();if(worldPanel.open)worldPanel.close();else heroNetwork.resume();}
 document.querySelector('#closeWorldPanel').addEventListener('click',returnToWorld);
 document.querySelector('[data-world-return]').addEventListener('click',returnToWorld);
 worldPanel.addEventListener('close',()=>{document.body.classList.remove('world-panel-open');heroNetwork.resume();document.querySelector('.world-field').focus({preventScroll:true});history.replaceState(null,'','#home');document.querySelectorAll('[data-world-destination]').forEach(button=>button.classList.remove('is-active'));nav.querySelectorAll('a').forEach(link=>link.classList.remove('active'));});
@@ -479,6 +504,43 @@ document.addEventListener('click',event=>{
 });
 addEventListener('hashchange',()=>{const key=location.hash.slice(1);if(worldDestinations[key])openWorld(key);else if(key==='home')returnToWorld();});
 if(JOIN_URL){const action=document.querySelector('#joinButton');action.href=JOIN_URL;action.target='_blank';action.rel='noopener noreferrer';action.textContent='Open registration ↗';}
+
+const companionPanel=document.querySelector('#companionPanel');
+const companionAnswers={
+ club:{title:'Learn cloud. Build together.',copy:'AWSSBG is the AWS Student Builder Group at MVJCE. We learn AWS and cloud fundamentals, join hands-on sessions, and explore projects with other students.',destination:'about',action:'Explore the club'},
+ beginner:{title:'Yes. You can start from zero.',copy:'No cloud experience is needed. Begin with an introductory session, bring a question, and learn alongside other students.',destination:'events',action:'Find a session'},
+ build:{title:'Start with something you want to make.',copy:'Explore web applications, serverless tools, cloud infrastructure, or AI experiments. These are project directions you can use to learn by building together.',destination:'projects',action:'Explore project ideas'}
+};
+let scoutDestination='about';
+function openScout(){if(entryGate.open)return;if(!companionPanel.open)companionPanel.showModal();}
+document.querySelectorAll('[data-open-companion]').forEach(button=>button.addEventListener('click',openScout));
+document.querySelector('#closeCompanion').addEventListener('click',()=>companionPanel.close());
+companionPanel.addEventListener('click',event=>{if(event.target!==companionPanel)return;const r=companionPanel.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)companionPanel.close();});
+document.querySelectorAll('[data-scout-question]').forEach(button=>button.addEventListener('click',()=>{
+ const answer=companionAnswers[button.dataset.scoutQuestion];scoutDestination=answer.destination;
+ document.querySelector('#scoutAnswerTitle').textContent=answer.title;
+ document.querySelector('#scoutAnswerCopy').textContent=answer.copy;
+ document.querySelector('#scoutAnswerAction').textContent=answer.action+' ↗';
+ document.querySelector('#companionAnswer').hidden=false;
+ document.querySelectorAll('[data-scout-question]').forEach(question=>question.setAttribute('aria-pressed',String(question===button)));
+ document.querySelector('#companionAnswer').scrollIntoView({block:'nearest',behavior:'instant'});
+}));
+document.querySelector('#scoutAnswerAction').addEventListener('click',()=>{companionPanel.close();openWorld(scoutDestination);});
+const motionToggle=document.querySelector('#motionToggle');
+function reflectMotionState(){
+ document.body.classList.toggle('motion-paused',motionPaused);
+ motionToggle.setAttribute('aria-pressed',String(motionPaused));motionToggle.setAttribute('aria-label',motionPaused?'Resume motion':'Pause motion');
+ document.querySelector('#motionLabel').textContent=motionPaused?'Resume motion':'Pause motion';document.querySelector('#motionSymbol').textContent=motionPaused?'▷':'Ⅱ';
+}
+reflectMotionState();
+motionToggle.addEventListener('click',()=>{
+ if(motionPaused){motionOffset+=performance.now()-motionPauseAt;motionPaused=false;}
+ else{motionPauseAt=performance.now();motionPaused=true;}
+ reflectMotionState();
+ if(motionPaused&&pendingWorldDestination)openWorld(pendingWorldDestination);
+ entranceNetwork.start();heroNetwork.start();
+});
+
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if('IntersectionObserver'in window&&!reduced){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
 </script>
