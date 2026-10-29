@@ -76,16 +76,11 @@
     (()=>{const intro=document.querySelector('.opening'), skip=intro.querySelector('.opening-skip'), music=intro.querySelector('.opening-music');
       if(matchMedia('(prefers-reduced-motion: reduce)').matches || location.hash) return;
       let timer, audio; const previous=document.activeElement;
-      const finish=()=>{clearTimeout(timer);if(audio){audio.close();audio=null}intro.classList.remove('active');intro.setAttribute('aria-hidden','true');document.body.style.overflow='';document.removeEventListener('keydown',onKey);if(previous && previous.focus)previous.focus({preventScroll:true})};
+      const finish=()=>{clearTimeout(timer);if(audio){audio.pause();audio.currentTime=0;audio=null}intro.classList.remove('active');intro.setAttribute('aria-hidden','true');document.body.style.overflow='';document.removeEventListener('keydown',onKey);if(previous && previous.focus)previous.focus({preventScroll:true})};
       const onKey=e=>{if(e.key==='Escape')finish();else if(e.key==='Tab'){e.preventDefault();(document.activeElement===music?skip:music).focus()}};
       music.addEventListener('click',async()=>{try{
-        if(audio){await audio.close();audio=null} const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio){music.textContent='Audio unavailable';return}
-        audio=new Audio();await audio.resume();const ctx=audio, start=ctx.currentTime+.08;
-        const tone=(freq,at,len,type,vol)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.setValueAtTime(freq,at);g.gain.setValueAtTime(.0001,at);g.gain.exponentialRampToValueAtTime(vol,at+.018);g.gain.exponentialRampToValueAtTime(.0001,at+len);o.connect(g).connect(ctx.destination);o.start(at);o.stop(at+len+.02)};
-        const beat=(at,high)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=high?'triangle':'sine';o.frequency.setValueAtTime(high?280:105,at);o.frequency.exponentialRampToValueAtTime(high?125:43,at+.12);g.gain.setValueAtTime(high?.08:.18,at);g.gain.exponentialRampToValueAtTime(.0001,at+.18);o.connect(g).connect(ctx.destination);o.start(at);o.stop(at+.2)};
-        const notes=[220,261.63,293.66,329.63,293.66,261.63,246.94,220,196,220,261.63,293.66,329.63,392,329.63,293.66,261.63,246.94,220,196,220,261.63,293.66,246.94];
-        notes.forEach((n,i)=>tone(n,start+i*.27,.23,'triangle',.07));for(let i=0;i<24;i++){const at=start+i*.27;if(i%2===0)beat(at,false);if(i%4===1||i%4===3)beat(at,true);if(i%4===0)tone(i%8?110:98,at,.45,'sine',.09)}
-        intro.querySelectorAll('.opening-card,.opening-art,.opening-character,.opening-progress i').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
+        if(audio){audio.pause();audio.currentTime=0}else{audio=new Audio('assets/intro-reference.m4a');audio.volume=.8}
+        await audio.play();intro.querySelectorAll('.opening-card,.opening-art,.opening-character,.opening-progress i').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
         clearTimeout(timer);timer=setTimeout(finish,6900);music.textContent='↻ Replay intro music';
       }catch(e){music.textContent='Audio unavailable'}});
       intro.classList.add('active');intro.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';skip.focus({preventScroll:true});skip.addEventListener('click',finish,{once:true});document.addEventListener('keydown',onKey);timer=setTimeout(finish,6900);
