@@ -86,6 +86,7 @@
         clearTimeout(timer);timer=setTimeout(finish,19800);music.textContent='↻ Replay intro music';
       }catch(e){music.textContent='Audio unavailable'}});
       intro.classList.add('active');intro.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';skip.focus({preventScroll:true});skip.addEventListener('click',finish,{once:true});document.addEventListener('keydown',onKey);timer=setTimeout(finish,19800);
+      audio=new Audio('assets/intro-new-track.m4a');audio.volume=.8;audio.play().then(()=>{if(intro.classList.contains('active'))music.textContent='↻ Replay intro music'}).catch(()=>{if(intro.classList.contains('active'))music.textContent='▶ Play intro music'});
     })();
     const meter=document.querySelector('.meter i');let queued=false;
     const updateProgress=()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty('--progress',max>0?Math.min(1,scrollY/max):0);queued=false})};
