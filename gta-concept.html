@@ -81,7 +81,7 @@
       const finish=()=>{clearTimeout(timer);if(audio){audio.pause();audio.currentTime=0;audio=null}intro.classList.remove('active');intro.setAttribute('aria-hidden','true');document.body.style.overflow='';document.removeEventListener('keydown',onKey);if(previous && previous.focus)previous.focus({preventScroll:true})};
       const onKey=e=>{if(e.key==='Escape')finish();else if(e.key==='Tab'){e.preventDefault();(document.activeElement===music?skip:music).focus()}};
       music.addEventListener('click',async()=>{try{
-        if(audio){audio.pause();audio.currentTime=0}else{audio=new Audio('assets/intro-middle.m4a');audio.volume=.8}
+        if(audio){audio.pause();audio.currentTime=0}else{audio=new Audio('assets/intro-new-track.m4a');audio.volume=.8}
         await audio.play();intro.querySelectorAll('.opening-card,.opening-art,.opening-character,.opening-progress i').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
         clearTimeout(timer);timer=setTimeout(finish,19800);music.textContent='↻ Replay intro music';
       }catch(e){music.textContent='Audio unavailable'}});
